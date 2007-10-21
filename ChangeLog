@@ -1,3 +1,8 @@
+2007-10-21  Anand Babu  <ab@zresearch.com>
+
+	* From freetalk--main--3.0 onwards all changelog will be
+	maintained by GNU Arch itself.
+
 2006-05-29  Harshavardhana Ranganath <harsha@80x25.org>
 
 	* fixed typo mistake in extensions/hacker-romance.scm.
