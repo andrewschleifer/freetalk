@@ -1,0 +1,13 @@
+#!/usr/bin/freetalk -s
+!#
+
+(ft-set-jid! "anand.avati@gmail.com")
+(ft-set-server! "talk.google.com")
+(ft-set-password! "f00b4r")
+(ft-set-sslconn! 1)
+
+(if (ft-login-blocking)
+   (begin
+     (ft-send-message "vikasgp@gmail.com" "ping")
+     (ft-disconnect))
+   (display "Could not connect\n"))

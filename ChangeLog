@@ -1,0 +1,636 @@
+2006-05-29  Harshavardhana Ranganath <harsha@80x25.org>
+
+	* fixed typo mistake in extensions/hacker-romance.scm.
+
+2006-05-29  Anand Babu  <ab@zresearch.com>
+
+	* extensions/hacker-romance.scm: fixed args parsing in
+	/burst-of-romance command. Added new command /greet.
+
+	* doc/freetalk.texi: updated doc for the above.
+
+2006-05-27  Anand V. Avati <avati@zresearch.com>
+
+	* src/primitives.cc: removed unused <linux/kd.h> to ease porting.
+	Thanks to observation of "Jasper Lievisse Adriaanse" <jasper@nedbsd.nl>
+
+	* src/register.cc: added #include <unistd.h> for getpass ()
+	Thanks to observation of "Jasper Lievisse Adriaanse" <jasper@nedbsd.nl>
+	
+2006-05-27  Harshavardhana Ranganath <harsha@freeshell.in>
+
+	* Changes done due to release management!! of autotools.
+	  src/Makefile.am
+	  doc/Makefile.am
+	* configure.ac (ALL_LINGUAS): removed because of the
+	 obsoleted feature.
+	* configure.ac (AM_ICONV): newly added
+
+2006-05-17  Harshavardhana Ranganath <harsha@freeshell.in>
+
+	* extensions/init.scm.in: updated likewise for
+	hacker-romance.scm
+	* po/POTFILES.in: updated likewise
+
+2006-05-16  Anand Babu  <ab@zresearch.com>
+
+	* extensions/first-time-run.sh: Moved prompt setting to hook
+	proc. Thanks to "Martin Schulze" <joey@infodorm.org> for reporting
+	this BUG.
+
+	* extensions/hacker-romance.scm: Now hackers can be romantic too.
+
+2006-05-07  Vikas Gorur  <vikas@80x25.org>
+
+	* extensions/roster.scm: Added /alias command to set nickname for
+	a buddy. 
+	* extensions/color.scm: Print nickname if set
+	
+2006-04-28  Vikas Gorur  <vikas@80x25.org>
+
+	* src/callbacks.cc (parse_timestamp): show both date & time in 
+	offline messages
+
+2006-04-26  Harshavardhana Ranganath <harsha@80x25.org>
+
+	* extensions/broadcast.scm: Newly added /broadcast and * for
+	sending broadcast message to all online buddies.
+	* extensions/utils.scm: added new send-messages-to-all likewise.
+	* extensions/pipe.scm,load.scm: fixed the bug, prints usage
+	information.
+	* extensions/init.scm.in: updated likewise.
+	* extensions/Makefile.am: updated likewise.
+	* po/POTFILES.in: updated likewise.
+
+2006-04-19  Vikas Gorur  <vikas@80x25.org>
+
+	* src/register.cc: in-band registration support added.
+	* src/commands.cc (do_change_password): added new command /passwd to
+	change password
+	* Freetalk 0.69 released
+	
+2006-04-08  Harshavardhana Ranganath <harsha@80x25.org>
+
+	* configure.ac,Makefile.am: bug fixes.
+	* po/POTFILES.in: *.c changed to *.cc fixed.
+
+2006-04-08  Vikas Gorur  <vikas@80x25.org>
+
+	* src/*.c: Changed all files to compile as C++, in anticipation of
+	adding libjingle support
+
+2006-04-04  Harshavardhana Ranganath <harsha@80x25.org>
+
+	* configure.ac: Replaced gh_enter with scm_boot_guile
+	gh_* features are deprecated in Guile 1.8
+	* configure.ac: Now prints loud the lib check error 
+	messages using AC_MSG_ERROR.
+
+2006-03-20  Harshavardhana Ranganath <harsha@80x25.org>
+
+	* extensions/init.scm.in: Corrected some typo
+	mistakes.
+	* autogen.sh: fixed removal of ~ files and 
+	gettextize.fixed.
+
+2006-03-17  Anand V. Avati <avati@zresearch.com>
+
+	* extensions/roster.scm: fixed typo in (_ ...)
+	
+2006-03-01  Anand Babu  <ab@zresearch.com>
+
+	* extensions/init.scm.in: if NLS is not supported, provide
+	dummy binding for _.
+
+2006-02-28 Harshavardhana Ranganath <harsha@80x25.org>
+
+	* Gettext conversion from a framework state is 
+	now stable.
+	* po/: directory set for translators for LOCALE 
+	conversion.
+	* extensions/init.scm: removed.
+	* extensions/init.scm.in: added newly.
+	* configure.ac : updated likewise.
+	* po/POTFILES.in: added files from extensions 
+	directory for gettext conversion.
+	* extensions/*.scm: supports gettext conversion.
+	* src/*.c: translatable strings now work for gettext
+	conversion.
+
+2006-02-27 Harshavardhana Ranganath <harsha@80x25.org>
+
+	* Added bug fixes for file-transfer mechanism
+	thanks to Basavangowda for sending the diff's.
+
+2006-02-15 Harshavardhana Ranganath <harsha@80x25.org>
+
+	* Patch added from Basavangowda for file transfer
+	between two buddies. Thanks Basavangowda for
+	contributing for file-transfer mechanism.
+	* src/file_transfer.c: file transfer mechanism newly
+	added.
+	* src/file_transfer.h: newly added.
+	* extensions/file-transfer.scm: /send-file command
+	newly added to send files to buddies and /allow-file
+	added for buddy to allow transfer of the sent file.
+	* src/primitives.c: `ft_send_file' and `ft_send_allow_file'
+	Added new primitives.
+	* src/extensions.c: `ft-notify-file-hook' Added new
+	hook.
+	
+2006-02-15 Harshavardhana Ranganath <harsha@80x25.org>
+
+	* Makefile.am: removed ACLOCAl_AMPLAGS and
+	EXTRA_DIST as they are dynamically added due to
+	the usage of gettextize.
+	* autogen.sh: removed --force option to stop 
+	overwriting already copied files.
+
+2006-02-14 Harshavardhana Ranganath <harsha@80x25.org>
+
+	* extensions/shell.scm: /quit has a new banner.
+
+2006-02-13 Harshavardhana Ranganath <harsha@80x25.org>
+
+	* configure.ac: Removed AM_GNU_GETTEXT_VERSION 
+	checking found conflicts on lower version systems 
+	and removed AC_CONFIG_FILES([po/Makefile.in]) 
+	as it is added dynamically.
+	* autogen.sh: `autopoint' is now `gettextize', in
+	support	to configure.ac.
+	* autogen.sh: added conditional checking for gettext 
+	version from 0.13.0=>further and more.
+	* po/Makevars: cleaned up a bit! :)
+
+2006-02-12 Harshavardhana Ranganath <harsha@80x25.org>
+
+	* extensions/color.scm: /color-enable, /color-disable
+	commands added for disabling and enabling buddy coloring.
+
+2006-02-11 Anand V. Avati <avati@zresearch.com>
+
+	* extensions/roster.scm: /who displays only online rosters..
+	/who all displays all
+	
+2006-02-06 Anand V. Avati <avati@zresearch.com>
+
+	* src/util.c: problem in async_printf () of not clearing prompt
+	while displaying new messages fixed. bug got exposed after dynamic
+	prompt feature as the prompt lenght was longer now
+	
+2006-02-01 Anand V. Avati <avati@zresearch.com>
+
+	* extensions/login.scm: change prompt dynamically to jid
+	
+2006-01-23 Harshavardhana Ranaganath <harsha@80x25.org>
+
+	* Makefile.am: po/ new subdir added.
+	(ACLOCAL_AMFLAGS): New variable.
+	(EXTRA_DIST): New variable.
+	* autogen.sh: Updated with `autopoint' command.
+	* configure.ac: Updated with gettext support.
+	* README: Updated.
+	* po/POTFILES.in: Newly added, list of source 
+	files which contain translatable strings.
+	* po/LINGUAS: Supports two recommended languages
+	en@quot and en@boldquot. (awaiting for translators)
+	* po/Makevars: Used by `Makefile.in.in'.
+	* src/freetalk.h: Added gettext string extraction.
+	* src/freetalk.c: Carries initial gettext triggering.
+	* src/Makefile.am (AM_CFLAGS): Updated.
+	
+2006-01-18  Harshavardhana Ranaganath <harsha@80x25.org>
+
+	* freetalk/*: Changed all links pointing to nongnu to gnu.
+	
+2005-12-23  Vikas Gorur  <vikas@80x25.org>
+
+	* configure.ac: Added check for loudmouth.
+
+2005-12-07  Anand V. Avati <avati@zresearch.com>
+
+	* extensions/loudscream.scm: continuations to come out of /repl.
+	calling (ft) from the guile /repl prompt, now gets you back to
+	freetalk prompt. the following /repl will take you back to the
+	point where you called (ft), with variable bindings and other state
+	intact
+	
+2005-12-03  Harshavardhana Ranganath <maxcohen@freeshell.in>
+	
+	* src/callbacks.c: removed unnecessary variables.
+
+2005-12-03  Harshavardhana Ranganath <maxcohen@freeshell.in>
+	
+	* doc/freetalk.texi: Updated with more commands related
+	info.
+
+2005-12-02  Anand Avati <avati@zresearch.com>
+
+	* extensions/shell.scm: more verbose default disconnect reason
+	* src/configure.ac: update version to 0.5
+	* */*: tagged 'post-0_5'
+	
+2005-12-01  Anand Avati <avati@zresearch.com>
+
+	* src/shell.scm: disconnect reason message printed in callback
+	* src/callbacks.c: disconnect reason message removed
+	
+2005-11-30  Harshavardhana Ranganath <maxcohen@freeshell.in>
+	
+	* src/extensions.c : Added new hook 'ft-quit-hook'.
+	* src/primitives.c : Added new 'ft-quit' primitive.
+	* extensions/shell.scm : /quit command now carries a banner.
+
+2005-11-30  Harshavardhana Ranganath <maxcohen@freeshell.in>
+	
+	* src/callbacks.c: Added Ascii message during /quit from freetalk
+	displays User Friendly image.
+
+2005-11-29  Anand Avati <avati@zresearch.com>
+
+	* src/configure.ac: applied Baishampayan Ghose's <b.ghose@gnu.org.in>
+	fix to error out loudly	in case of missing libs. 
+	Thanks Baishampayan Ghose!
+
+	
+2005-11-27  Anand Avati <avati@zresearch.com>
+
+	* src/freetalk.c: catch invalid input with sane error message
+	
+2005-11-25  Anand Babu  <ab@zresearch.com>
+
+	* extensions/beep.scm: check if beep binary is there, if not just
+	plain bell.
+	* src/primitives.c: replaced non-portable ioctl beep code with
+	"\a".
+	* extensions/proud-of-freetalk.scm: strip white-space around args.
+	* extensions/init.scm: removed loading of conference.scm.
+
+2005-11-23  Anand Babu  <ab@zresearch.com>
+
+	* extensions/roster.scm: /add /remove - else case requires begin
+	block. 
+	* src/primitives.c (ex_give_repl): return
+	SCM_UNSPECIFIED.
+	* src/loudscream.h: newly added.
+
+2005-11-22  Vikas Gorur  <vikas@80x25.org>
+
+	* freetalk-nl branch merged with the main tree
+	* extensions/loudscream.scm: added /repl command; useful for debugging
+	* extensions/roster.scm: fixed problem with /remove and friends;
+	all of them use sans-surrounding-whitespace now
+	
+2005-11-17  Anand Avati <avati@zresearch.com>
+
+	* extensions/history.scm: SESSION file is zero'd on user disconnect
+	(/quit or /disconnect) instead of at post-login. Ctrl-c exit does
+	NOT clear SESSION history.
+	
+2005-11-14  Anand Babu  <ab@zresearch.com>
+
+	* extensions/Makefile.am: added proud-of-freetalk.scm.
+	* extensions/color.scm: support for ignore-message. Need a better
+	approach. Lets have a discussion.
+	* first-time-run.sh: fixed prompt string escape char.
+	* extensions/init.scm: load proud-of-freetalk.scm.
+	* freetalk/extensions/utils.scm: removed old commented stuff.
+	* extensions/proud-of-freetalk.scm: new extension ported from
+	freehoo.
+
+2005-11-13  Anand Babu  <ab@zresearch.com>
+
+	* extensions/first-time-run.sh: set status message on successful
+	ft-login-hook hook.
+	* examples/freetalk.scm: likewise.
+
+2005-11-08  Harshavardhana Ranganath <maxcohen@mutt.in>
+	
+	* doc/freetalk.man: cosmetic changes,made it more informative.
+	
+2005-11-07  Anand V. Avati <avati@zresearch.com>
+
+	* extensions/url.scm: /urlview | /urlview BUDDY to handle
+	url's via "urlview" in current session, or in buddy history
+	
+2005-11-06  Vikas Gorur  <vikasgp@gmail.com>
+
+	* doc/freetalk.man: added Harsha's man page.
+
+2005-11-03  Anand Babu  <ab@zresearch.com>
+
+	* extensions/first-time-run.sh: added default status message
+	setting.
+	* examples/freetalk.scm: likewise.
+
+2005-11-03  Anand Avati <avati@zresearch.com>
+
+	* src/interpreter.c: fixed roster autocompletion in domain region
+	* src/prmitives.c: ex_beep(): re-used stdin instead of tty
+	* src/callbacks.c: re-set conn_state _after_ discon hook processing
+	
+2005-11-02  Vikas Gorur  <vikasgp@gmail.com>
+
+	* src/callbacks.c: check if body of msg is empty; otherwise freetalk
+	crashes on an empty message
+
+2005-11-04  Vikas Gorur  <vikasgp@gmail.com>
+
+	* extensions/loudscream.scm: some macros to make constructing
+	lm-message easier.
+
+2005-11-02  Vikas Gorur <vikasgp@gmail.com>
+        
+	* New branch (freetalk-nl) created to experiment on a new scheme
+	  interface to the Loudmouth library
+	* src/loudscream.c: Guile interface to loudmouth; newly added.
+	* src/loudscream.c: LmMessage and LmMessageNode done (I think)
+
+2005-11-02  Anand Avati <avati@zresearch.com>
+
+	* src/roster.scm: aliased /whomomlikes to /whoami .. complete job :-)
+	* src/interpreter.c: added autocompeltion for /allow
+	
+2005-11-01  Anand Babu  <ab@zresearch.com>
+
+	* extensions/init.scm: no need to check for beep binary now.
+	* extensions/roster.scm: new command /whoami
+	* doc/freetalk.texi: doc for /whoami command.
+	
+2005-11-01  Vikas Gorur  <vikasgp@gmail.com>
+
+	* src/primitives.c: new primitive ft-beep
+	* extensions/beep.scm: now uses ft-beep
+
+2005-11-01  Vikas Gorur  <vikasgp@gmail.com>
+
+	* AUTHORS: added Ravi to logo credits
+	* src/freetalk.c: Load extensions after handling args
+	* Freetalk 0.42 released
+	* Minor bugfix, Freetalk 0.42.1 released
+
+2005-10-31  Vikas Gorur  <vikasgp@gmail.com>
+
+	* src/primitives.c: checks to make sure user is authenticated before
+	trying to add/remove roster items
+
+2005-10-31  Anand Avati <avati@zresearch.com>
+
+	* src/freetalk.c: turn on ssl by default
+	
+2005-10-30  Anand Avati <avati@zresearch.com>
+
+	* extensions/login.scm: try to connect only if jid and server both set
+	
+2005-10-30  Vikas Gorur  <vikasgp@gmail.com>
+
+	* src/roster.c: handle more states in subscription_type_to_str
+	* extensions/roster.scm: added /remove command
+	* src/primitives.c: new primitive ft-remove-buddy!
+	* src/roster.c: added ft_roster_remove
+	* src/roster.c: removed JID change code; jid can't change :p
+	* src/roster.c: fixed /add command
+	* src/presence.c, src/extensions.c: added new hook ft-subscribe-receive-hook
+	* extensions/roster.scm: subscription request is now printed here
+	
+2005-10-29  Anand V. Avati  <avati@guhnoo.hardcodecafe.com>
+
+	* doc/freetalk.texi: fixed some documentation inconsistancies
+
+2005-10-28  Vikas Gorur  <vikasgp@gmail.com>
+
+	* src/presence.c: hook is always called. roster.scm prints the
+	message only if there is any change in the roster item.
+
+2005-10-28  Anand Avati <avati@zresearch.com>
+
+	* src/presence.c: hook called only if presence message causes any
+	change in roster item
+	* GCC warnings fixed
+	* /who output cosmetic changes
+	
+2005-10-28  Vikas Gorur  <vikasgp@gmail.com>
+
+	* extensions/roster.scm: Cosmetic changes to /who output
+	* src/presence.c: Moved status_pretty_print to Scheme; it is now
+	pretty-print-show-msg in extensions/roster.scm
+	* src/presence.c: Moved presence message printing to roster.scm
+	* src/primitives.c: new primitive ft-roster-lookup
+	
+2005-10-27  Vikas Gorur  <vikasgp@gmail.com>
+
+	* src/commands.c: Fixed bug where ft_roster_retrieve was being called
+	twice
+	* src/primitives.c: Modified ft-get-roster-list to return more info
+	* extensions/roster.scm: Implemented /who command
+	* src/callbacks.c, src/presence.c: Fixed bug. We must not send initial presence until after sending
+	request for roster.
+	* extensions/roster.scm: Added /allow, /deny commands
+	* src/primitives.c: new primitives ft-subscription-allow, ft-subscription-deny
+
+2005-10-26  Vikas Gorur  <vikasgp@gmail.com>
+
+	* src/roster.c: the roster is now stored as state.roster
+	* src/presence.c: Moved presence code into presence.c
+	* src/presence.c: Supports <status> messages
+
+2005-10-26  Anand Babu  <ab@zresearch.com>
+
+	* doc/freetalk.texi: Applied Harsha's doc patch for new
+	commands. Thanks Harsha. 
+
+2005-10-26  Anand Avati <avati@zresearch.com>
+
+	* src/extensions.c: new primitive ft-send-message-no-hook
+	
+2005-10-25  Anand Avati <avati@zresearch.com>
+
+	* src/mr-oxford.scm, src/commands.c: maintain dictionary list
+	in reverse sorted order, and use ft-dict-prepend! to add words.
+	Loads MUCH faster now.
+	* src/connections.scm: improved and more interactive /login command
+	
+2005-10-24  Anand Avati <avati@zresearch.com>
+	* src/history.scm: ported from freehoo
+	* src/callbacks.c: strip /resource from user@domain/resource of
+	incoming messages
+
+2005-10-23  Anand Avati <avati@zresearch.com>
+
+	* src/extensions.c: ft_load looks for extensions in current
+	dir first and accepts absolute paths
+	* extensions/state.scm: /load command added
+	* src/interpreter.c: 
+	- basic autocompletion (stateful) available
+	- do_send_message () is done only if to_jid is a valid buddy
+	* src/freetalk.c: all non-commands and non-messages (i,e destined
+	to non-buddies) are evaluated as lisp expressions
+	* extensions/state.scm: new command /setup to reset ~/.freetalk
+	and archive current satate to ~/.freetalk-backup-<num>
+	* src/extensions.c: new hook ex_login_hook called on login with success/failuer
+	* src/commands.c: prmitives for dictionary support, for mr-oxford.scm
+	* extensions/mr-oxford.scm, utils.scm: ported from freehoo
+	* src/commands.c: new primitive ft-login-blocking for connection and
+	authentication in a blocking fashion. intended for scripting mode.
+	* src/connection.c: /login prmitive which uses ft-login-blocking
+	* src/freetalk.c: args now override ~/.freetalk.scm
+	* src/freetalk.c: script mode and daemon mode now supported, see examples/*.ft
+	
+	
+2005-10-23  Anand Babu  <ab@zresearch.com>
+
+	* src/callbacks.c: fixed gcc-4.x.x type cast warnings. 
+	* extensions/dyn-commands.scm: removed /help wrapper
+	procedure. New add-command! primitive supports command aliasing
+	automatically ;;) 
+
+2005-10-22  Anand Avati <avati@zresearch.com>
+
+	* extensions/dyn-commands.scm:
+	- display of /help commands sorted by alphabetical order
+	- IMPORTANT: add-command! prototype changed, second argument
+	is now procedure name (extra parameter)
+	* extensions/*.scm: all add-command! calls changed to the new
+	prototype.
+	
+2005-10-21  Anand Babu  <ab@zresearch.com>
+
+	* doc/freeipmi.tex: Applied Harsha's partch for port command
+	documentation.
+
+2005-10-22  Anand Avati <avati@zresearch.com>
+
+	* src/extensions.c: new hook ex_command_hook for handling commands
+	* interpreter.c: removed all commands and command framework. commands
+	are now totally in scheme space
+	* extensions/state.scm: /commands related to messenger state
+	* extensions/connection.scm: /commands related to connection
+	* extensions/roster.scm: commands related to buddy lists
+	
+2005-10-21  Anand Babu  <ab@zresearch.com>
+
+	* extensions/beep.scm: fixed bug, receive hook takes 3 args.
+
+2005-10-21  Anand Avati <avati@zresearch.com>
+
+	* src/interpreter.c: "/password" command to set password
+	scenario - tried to connect and failed because of wrong
+	password.. reconnect by /password followed by /connect
+	* src/callbacks.c: disconnection handler made more verbose
+	and state cleanup (free roster list) to permit successive
+	/connect's
+	* src/roster.c: new api ft_roster_flush() to clean up
+	buddy list
+	
+2005-10-21  Anand Avati <avati@zresearch.com>
+
+	* src/roster.c: correct handling of online/offline status
+	instead of reusing status_msg with "unavailable", correct
+	handling of presense message (previously all users were
+	by default coming online)
+	* src/interpreter.c: cosmetic changes to /who
+	
+2005-10-21  Anand Avati <avati@zresearch.com>
+
+	* src/commands.c: send message hook now gets called
+	even of conn.status != FT_AUTH (for commands to get
+	evaluated). the lm_send_message is within the check.
+	This bug was causing problems like /quit not working
+	when not connected as hook wouldnt be called.
+	
+2005-10-19  Anand Babu  <ab@zresearch.com>
+
+	* extensions/pipe.scm: pipe.scm extension.
+	* doc/freetalk.texi: updated documentation. Fixed broken menu
+	links. 
+
+2005-10-18  Anand Babu  <ab@zresearch.com>
+
+	* doc/freetalk.texi: Thanks to Harshavardhana for contributing
+	texi documentation.
+	* doc/Makefile.am: newly added.
+	* doc/gpl.texi: newly added.
+	* doc/fdl.texi: newly added.
+	* doc/permissions.texi: newly added.
+	* AUTHORS: updated.
+
+2005-10-17  Anand Babu  <ab@zresearch.com>
+
+	* example/init.scm: removed. 
+
+2005-10-15  Anand Babu  <ab@zresearch.com>
+
+	* extensions/dict-buddy.scm: now uses dynamic command interface.
+	 Previously had a bug in handling hook. 
+	* src/commands.c: Hook bug was in dict-buddy.scm, not here. Hook
+	 feature returns back do_send_message :p. Fixed typo in
+	 LM_ESSAGE_TYPE_PRESENCE. Vikas checked in without even compiling
+	 once or ChangeLog :O. GCC-4.x.x pointer type casting fixes.
+	* roster.c: GCC-4.x.x pointer type casting fixes.
+
+2005-10-12  Anand Babu  <ab@zresearch.com>
+
+	* extensions/shell.scm: new shell extension.
+	* extensions/dyn-commands.scm: new dynamic command extension.
+	* extensions/login.scm: loads new extensions as well.
+	* src/commands.c(do_send_message): now supports hook-return.
+	* src/freetalk.c(process_line): do not return for empty
+	messages. dyn-commands.scm now handles trashing empty messages.
+	* src/interpreter.c: removed ft_help, ft_quit and associated
+	documentation.
+	
+2005-10-11  Anand Babu  <ab@zresearch.com>
+
+	* extensions/dict-buddy.scm: new extension for dictionary support.
+	* extensions/init.scm: load dict-buddy.scm
+
+2005-10-09  Anand Babu  <ab@zresearch.com>
+
+	* extensions/first-time-run.sh: commented out loading of
+	login.scm.
+	* extensions/init.scm: now loads login.scm, beep.scm and color.scm
+	extensions. It also catches exceptions from the extensions.
+	* src/extensions.c: do not load init.scm here. New primitive
+	ft-hook-return. Renamed ft-printf to ft-display.
+	* src/freetalk.c:  load init.scm after loading freetalk.scm and
+	initializing extensions. Replaced gh_eval_str with
+	gh_eval_str_with_stack_saving_handler.
+	* extensions/beep.scm: new beep extension.
+	* extensions/color.scm: messages are now in color.
+	* src/callbacks.c(ft_msg_msg_handler): supports hook return.
+	* src/primitives.c: new primitive ft-hook-return.
+	
+
+2005-10-04  Anand Avati <avati@zresearch.com>
+
+	* login.scm: interactive login, default server as domain from user@domain 
+	* ~/.freetalk/freetalk.scm : default freetalk.scm does (ft-load "login.scm")
+	
+2005-10-03  Anand Avati <avati@zresearch.com>
+
+	* extensions, primitives: guile extensions
+	
+2005-10-02  Anand Avati <avati@zresearch.com>
+
+	* util.h: PRINTF() macro for "non disruptive" display of text
+	* commands.c: added do_ssl() - toggle need_ssl (needed for google talk)
+	* freetalk.c: attempt initial automatic connection on bootstrap
+	
+2005-10-01  Anand Avati <avati@zresearch.com>
+
+	* interpreter.c: interface between readline and commands (do_*)
+	* freetalk.c: restructured program loop and even locations (login etc)
+	* freetalk.h: replaced ft_user with ft_state with broader scope
+	* commands.c: few simple commands added
+	* util.c: added second_word () utility function
+	* callbacks.c: changes to use ft_state instead of ft_user
+	
+2005-09-24  Anand Avati <avati@hardcodecafe.com>
+
+	* configure.ac: probe for tgetent() in ncurses/termcap
+	                else configure cribs in slackware
+	
+2005-09-22  Vikas Gorur  <vikasgp@gmail.com>
+
+	* freetalk: committed to CVS
+

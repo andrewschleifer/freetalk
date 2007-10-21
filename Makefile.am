@@ -1,0 +1,11 @@
+SUBDIRS = src extensions doc po 
+
+PACKAGE = @PACKAGE@
+VERSION = @VERSION@
+
+LOUDMOUTH_CFLAGS = @LOUDMOUTH_CFLAGS@
+LOUDMOUTH_LIBS = @LOUDMOUTH_LIBS@
+
+ACLOCAL_AMFLAGS = -I m4
+
+EXTRA_DIST = config.rpath mkinstalldirs examples autogen.sh

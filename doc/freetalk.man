@@ -1,0 +1,61 @@
+.\" --*-nroff-*--
+.\" Author: Harshavardhana Ranganath <harsha@80x25.org>.
+.\" Copyright (c) Freetalk Core Team.
+.\"
+.\" This Document is free software; you can redistribute it and/or
+.\" modify it under the terms of the GNU General Public License as 
+.\" published by the Free Software Foundation; either version 2 of the
+.\" License, or (at your option) any later version.
+.\"
+
+.TH freetalk "1" "November 1 2005" "Release Date" "Linux Programmers Manual"
+.SH "NAME"
+freetalk  \- The Console based Jabber client-cum-bot.
+.SH "SYNOPSIS"
+.B
+.IP 
+.B freetalk [options]
+.SH "DESCRIPTION"
+FreeTalk is a console based jabber client-cum-bot. It features a readline interface with auto completion 
+of buddy names,commands and even ordinary english words!. Freetalk is extensible, configurable and 
+scriptable through Guile interface. 
+.SH "OPTIONS"
+.TP
+\fB\-j\fR=\fIJABBER-ID\fR, \fB\-\-jid\fR=\fIJABBER-ID\fR
+JABBER-ID is your login name.
+.TP
+\fB\-s\fR=\fISCRIPT-FILE\fR, \fB\-\-script\fR=\fISCRIPT-FILE\fR
+Invoke Script/Bot Mode SCRIPT-FILE as the source.
+.TP
+\fB\-V\fR, \fB\-\-version\fR            
+Version information
+.TP
+\fB\-?\fR, \fB\-\-help\fR, \fB\-\-usage\fR
+Help briefly on the above options
+.PP
+For more information, type "/help"  or "help" from within freetalk, or consult the
+freetalk manual (available as on-line info or a printed manual).
+.SH "AUTHOR"
+Harshavardhana Ranganath <harsha@80x25.org>
+.SH "BUG REPORT"
+Report bugs to "freetalk-dev@gnu.org"
+.SH "COPYING"
+Freetalk comes with ABSOLUTELY NO WARRANTY.
+You may redistribute copies of Freetalk
+under the terms of the GNU General Public License v2 or later.
+For more information about these matters, see the filenamed COPYING.
+.SH "SEE ALSO"
+.BR guile(1)
+.BR glib-config(2)
+.PP
+The full documentation for
+.B FreeTalk
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B freetalk
+programs are properly installed at your site, the command
+.IP
+.B info freetalk
+.PP
+should give you access to the complete manual.
