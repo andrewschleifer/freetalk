@@ -3,7 +3,7 @@ dnl Most of this stolen from Freehoo
     
 dnl Process this file with autoconf to produce a configure script
 
-AC_INIT([freetalk], [0.7.rc0], [freetalk-dev@gnu.org])
+AC_INIT([freetalk], [3.rc0], [freetalk-dev@gnu.org])
 AM_INIT_AUTOMAKE
 
 AC_PREREQ([2.57])

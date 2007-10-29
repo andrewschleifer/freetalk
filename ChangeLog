@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2007-10-29 03:30:13 GMT	Anand Babu <ab@zresearch.com>	patch-6
+
+    Summary:
+      Fixed a new versioning scheme
+    Revision:
+      freetalk--main--3.0--patch-6
+
+    * All versions will match the TLA tree-version
+    * Could not use 2.0 tree version because it was already used for discontinued libjingle 1.0 branch.
+
+    modified files:
+     ChangeLog configure.ac
+
+
 2007-10-29 03:17:40 GMT	Anand Babu <ab@zresearch.com>	patch-5
 
     Summary:
