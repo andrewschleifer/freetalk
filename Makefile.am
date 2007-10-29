@@ -8,4 +8,4 @@ LOUDMOUTH_LIBS = @LOUDMOUTH_LIBS@
 
 ACLOCAL_AMFLAGS = -I m4
 
-EXTRA_DIST = config.rpath mkinstalldirs examples autogen.sh
+EXTRA_DIST = examples autogen.sh
