@@ -25,6 +25,14 @@
 		   (and (display "Jabber ID: ") 
 			(read-line)))))
 
+;; check if both user and domain are present
+(if (not (string-rindex (ft-get-jid) #\@))
+    (begin
+      (display (string-append "freetalk: Jabber ID ["
+			      (ft-get-jid)
+			      "] should contain full user@domain\n"))
+      (exit 1)))
+
 (define (domain->server domain)
   (cond ((string=? domain "gmail.com") "talk.google.com")
 	((string=? domain "google.com") "talk.google.com")

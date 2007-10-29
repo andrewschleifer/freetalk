@@ -34,12 +34,9 @@
 
 SCM ex_load (SCM scm_file)
 {
-  char *file;
-
-  file = scm_to_locale_string (scm_file);
+  char *file=scm_to_locale_string (scm_file);
 
   ft_load (file);
-
   free (file);
 
   return SCM_UNSPECIFIED;
@@ -52,9 +49,7 @@ SCM ex_get_jid (void)
 
 SCM ex_set_jid (SCM scm_jid)
 {
-  char *jid;
-
-  jid = scm_to_locale_string (scm_jid);
+  char *jid = scm_to_locale_string (scm_jid);
 
   do_set_jid (jid);
   free (jid);
@@ -69,9 +64,7 @@ SCM ex_get_server (void)
 
 SCM ex_set_server (SCM scm_server)
 {
-  char *server;
-
-  server = scm_to_locale_string (scm_server);
+  char *server = scm_to_locale_string (scm_server);
 
   do_set_server (server);
   free (server);
@@ -86,9 +79,7 @@ SCM ex_get_password (void)
 
 SCM ex_set_password (SCM scm_password)
 {
-  char *password;
-
-  password = scm_to_locale_string (scm_password);
+  char *password = scm_to_locale_string (scm_password);
 
   do_set_password (password);
   free (password);
@@ -213,7 +204,7 @@ ex_get_conn_status (void)
 SCM
 ex_add_buddy (SCM scm_jid)
 {
-  char *jid = SCM_STRING_CHARS (scm_jid);
+  char *jid = scm_to_locale_string (scm_jid);
   do_add (jid);
   return SCM_UNSPECIFIED;
 }
@@ -221,13 +212,15 @@ ex_add_buddy (SCM scm_jid)
 SCM
 ex_remove_buddy (SCM scm_jid)
 {
-  char *jid = SCM_STRING_CHARS (scm_jid);
+  char *jid = scm_to_locale_string (scm_jid);
   if (do_get_conn_status () != FT_AUTH)
     {
       PRINTF ("%s",_("Not connected, (use /connect)"));
       return scm_from_bool (FALSE);
     }
   ft_roster_remove (jid);
+  free (jid);
+
   return scm_from_bool (TRUE);
 }
 
@@ -300,21 +293,25 @@ ex_get_roster_list (void)
 SCM
 ex_get_roster_status_msg (SCM scm_jid)
 {
-  char *jid = SCM_STRING_CHARS (scm_jid);
+  char *jid = scm_to_locale_string (scm_jid);
   return scm_from_locale_string (ft_roster_lookup (jid)->status_msg);
 }
 
 SCM
 ex_get_roster_is_online (SCM scm_jid)
 {
-  char *jid = SCM_STRING_CHARS (scm_jid);
+  char *jid = scm_to_locale_string (scm_jid);
   return ft_roster_lookup (jid)->is_online ? SCM_BOOL_T : SCM_BOOL_F;
 }
 
 SCM
 ex_roster_lookup (SCM scm_jid)
 {
-  FtRosterItem *item = ft_roster_lookup (SCM_STRING_CHARS (scm_jid));
+  char *jid = scm_to_locale_string (scm_jid);
+  FtRosterItem *item = ft_roster_lookup (jid);
+
+  free (jid);
+
   if (item)
     return roster_item_to_list (item);
   else
@@ -322,10 +319,13 @@ ex_roster_lookup (SCM scm_jid)
 }
 
 SCM
-ex_roster_set_nickname (SCM scm_jid, SCM nickname)
+ex_roster_set_nickname (SCM scm_jid, SCM scm_nickname)
 {
-  ft_roster_set_nickname (SCM_STRING_CHARS (scm_jid),
-			  SCM_STRING_CHARS (nickname));
+  char *jid = scm_to_locale_string (scm_jid);
+  char *nickname = scm_to_locale_string (scm_nickname);
+  
+  ft_roster_set_nickname (jid, nickname);
+
   return SCM_UNSPECIFIED;
 }
 
@@ -341,6 +341,8 @@ ex_dict_append (SCM scm_word)
   char *word = scm_to_locale_string (scm_word);
 
   do_dict_append (word);
+  free (word);
+
   return SCM_UNSPECIFIED;
 }
 
@@ -369,6 +371,7 @@ ex_dict_remove (SCM scm_word)
 
   do_dict_remove (word);
   g_free (word);
+
   return SCM_UNSPECIFIED;
 }
 
@@ -463,11 +466,14 @@ ex_quit (SCM scm_exit_code)
 SCM
 ex_send_file (SCM scm_reciever_jid, SCM scm_file_name)
 {
-  char *reciever = scm_to_locale_string (scm_reciever_jid);
+  char *receiver = scm_to_locale_string (scm_reciever_jid);
   char *file_name = scm_to_locale_string (scm_file_name);
   int ret = 0;
 
-  ret  = ft_send_file (state.jid_str, reciever, file_name);
+  ret  = ft_send_file (state.jid_str, receiver, file_name);
+  free (receiver);
+  free (file_name);
+
   return scm_from_int (ret);
 }
 
@@ -478,6 +484,8 @@ ex_set_allow_file (SCM scm_cookie, SCM scm_file_name)
   char *file_name = scm_to_locale_string (scm_file_name);
   
   ret = ft_set_allow_file (scm_to_int (scm_cookie), file_name);
+  free (file_name);
+
   return scm_from_int (ret);
 }
 
@@ -486,7 +494,7 @@ ex_set_allow_file (SCM scm_cookie, SCM scm_file_name)
 SCM
 ex_change_password (SCM newpass)
 {
-  char *npass = SCM_STRING_CHARS (newpass);
+  char *npass = scm_to_locale_string (newpass);
   do_change_password (npass);
   return SCM_UNSPECIFIED;
 }
@@ -494,6 +502,6 @@ ex_change_password (SCM newpass)
 SCM
 ex_bind_to_ctrl_key (SCM key, SCM command)
 {
-  ft_bind_to_ctrl_key (SCM_CHAR (key), SCM_STRING_CHARS (command));
+  ft_bind_to_ctrl_key (SCM_CHAR (key), scm_to_locale_string (command));
   return SCM_UNSPECIFIED;
 }
