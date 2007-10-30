@@ -2,6 +2,18 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2007-10-30 16:52:24 GMT	Anand Babu <ab@zresearch.com>	patch-7
+
+    Summary:
+      prevent empty history lines from being added
+    Revision:
+      freetalk--main--3.0--patch-7
+
+
+    modified files:
+     ChangeLog src/freetalk.cc
+
+
 2007-10-29 03:30:13 GMT	Anand Babu <ab@zresearch.com>	patch-6
 
     Summary:

@@ -82,7 +82,10 @@ process_line (char *line)
     return;
 
   if (*line) {
-    add_history (line);
+    const char *curr_buddy = do_get_current_buddy ();
+    if (curr_buddy)
+      if (strlen (line) > (strlen (curr_buddy) + 1))
+	add_history (line);
   } else {
     do_set_current_buddy (NULL);
   }
