@@ -2,6 +2,18 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2007-11-03 09:14:35 GMT	Anand Babu <ab@zresearch.com>	patch-8
+
+    Summary:
+      example key binding to a send message
+    Revision:
+      freetalk--main--3.0--patch-8
+
+
+    modified files:
+     ChangeLog examples/freetalk.scm
+
+
 2007-10-30 16:52:24 GMT	Anand Babu <ab@zresearch.com>	patch-7
 
     Summary:

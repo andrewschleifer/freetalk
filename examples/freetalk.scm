@@ -20,7 +20,8 @@
 ;                    (ft-set-status-msg! "online")))))
 
 ;;;
-;;; Let ctrl-a display full roster, ctrl-e who i am, ctrl-h online buddies
+;;; Let ctrl-a display full roster, ctrl-e who i am
 ; (ft-bind-to-ctrl-key #\a "(/who \"all\")")
 ; (ft-bind-to-ctrl-key #\e "(/whoami \"\")")
-; (ft-bind-to-ctrl-key #\h "(/who \"\")")
+;;; ctrl-i - send a hug to your mother with a press of a button
+; (ft-bind-to-ctrl-key #\h "(ft-send-message \"mymother@gmail.com\" \">:D<\")")
