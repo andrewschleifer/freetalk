@@ -18,7 +18,7 @@
 ;;; Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA
 
 ;;; shell command for pagination
-(define history-page-cmd "less --quit-at-eof --quit-if-one-screen ")
+(define history-page-cmd "less --quit-at-eof")
 
 ;;; history path
 (define history-path "/dev/")
