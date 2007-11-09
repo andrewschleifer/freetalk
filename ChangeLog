@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2007-11-09 05:55:43 GMT	Anand Babu <ab@zresearch.com>	patch-13
+
+    Summary:
+      fixed history less again
+    Revision:
+      freetalk--main--3.0--patch-13
+
+    
+    
+
+    modified files:
+     ChangeLog extensions/history.scm
+
+
 2007-11-09 05:51:13 GMT	Anand Babu <ab@zresearch.com>	patch-12
 
     Summary:
