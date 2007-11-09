@@ -17,8 +17,7 @@
 Freetalk is a freely available console based Jabber client-cum-bot powered
 by GNU Guile, GNU Readline and Loudmouth.
 
-Copyright @copyright{} 2005 Freetalk Core Team http://www.gnu.org/software/freetalk
-Copyright @copyright{} 2005 Z RESEARCH, Inc. http://www.zresearch.com
+Copyright @copyright{} 2005,2007 Freetalk Core Team http://www.gnu.org/software/freetalk
 
 @end ifinfo
 
@@ -183,6 +182,7 @@ any argument.
 * shell::                       run or escape to shell.
 * date::                        date command.
 * who::                         view buddy list.
+* status::                      
 * whoami::                      display current account info.
 * version::                     displays freetalk version information.
 * logout::                      same as disconnect.
@@ -220,7 +220,6 @@ Server not set
 @end example
 @end deffn
 @cmindex connect
-
 
 @node disconnect, server, connect, Commands
 @section Freetalk command - disconnect
@@ -410,7 +409,7 @@ list of @var{arguments}.
 @end deffn
 @cmindex date
 
-@node who, whoami, date, Commands
+@node who, status, date, Commands
 @section Freetalk command - who
 @deffn command /who
 This command displays the buddy list as well as their current buddy
@@ -430,7 +429,23 @@ Example:
 @end deffn
 @cmindex who
 
-@node whoami, version, who, Commands
+@node status, whoami, who, Commands
+@section Freetalk command - status
+@deffn command /status [online|away|chat|xa|dnd] [MESSAGE]
+Sets or displays your current status.
+
+Example:
+
+@example
+~\/~ /status online Using Freetalk
+~\/~ /status 
+Current status: online Using Freetalk
+~\/~
+@end example
+@end deffn
+@cmindex status
+
+@node whoami, version, status, Commands
 @section Freetalk command - whoami
 @deffn command /whoami
 This command displays the currently logged in buddy info.

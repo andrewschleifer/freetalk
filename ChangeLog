@@ -2,6 +2,19 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2007-11-09 05:45:58 GMT	Anand Babu <ab@zresearch.com>	patch-11
+
+    Summary:
+      updated documentation
+    Revision:
+      freetalk--main--3.0--patch-11
+
+
+    modified files:
+     ChangeLog configure.ac doc/freetalk.texi extensions/state.scm
+     src/Makefile.am src/roster.h
+
+
 2007-11-09 04:26:11 GMT	Anand Babu <ab@zresearch.com>	patch-10
 
     Summary:

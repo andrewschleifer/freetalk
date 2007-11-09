@@ -1,5 +1,4 @@
-dnl Author Vikas Gorur <vikasgp@gmail.com>
-dnl Most of this stolen from Freehoo
+dnl Copyright 2007 Freetalk Core Team
     
 dnl Process this file with autoconf to produce a configure script
 

@@ -28,7 +28,7 @@
 
 (define (/status args)
   (usual-crap ft-get-status-msg ft-set-status-msg! "Current status: " args))
-(add-command! /status "/status" "/status [NEWSTATUS]" "set status message")
+(add-command! /status "/status" "/status [online|away|chat|xa|dnd] [MESSAGE]" "set status message")
 
 (define (/server args)
   (usual-crap ft-get-server ft-set-server! "Current server: " args))

@@ -1,6 +1,5 @@
 /*
-  Author: Vikas Gorur <vikas@80x25.org>
-  (C) 2005,2006 Freetalk core team
+  Copyright 2005,2006 Freetalk core team
   
   callbacks.c: Callback functions
   
