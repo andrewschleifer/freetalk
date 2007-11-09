@@ -3,7 +3,7 @@ dnl Most of this stolen from Freehoo
     
 dnl Process this file with autoconf to produce a configure script
 
-AC_INIT([freetalk], [3.rc0], [freetalk-dev@gnu.org])
+AC_INIT([freetalk], [3.0], [freetalk-dev@gnu.org])
 AM_INIT_AUTOMAKE
 
 AC_PREREQ([2.57])
@@ -19,9 +19,9 @@ AC_CHECK_LIB([readline], [readline],,AC_MSG_ERROR([ERROR! readline not found...]
 
 AC_CHECK_LIB([guile],[scm_boot_guile],,AC_MSG_ERROR([ERROR! guile not found...]))
 
-dnl AC_CHECK_LIB([glib-2.0],[g_slist_free],,AC_MSG_ERROR([ERROR! glib-2.0 not found...]))
+AC_CHECK_LIB([glib-2.0],[g_slist_free],,AC_MSG_ERROR([ERROR! glib-2.0 not found...]))
 GLIB_CFLAGS=`pkg-config --cflags glib-2.0`
-GLIB_LIBS=`pkg-config --ldflags glib-2.0`
+GLIB_LIBS=`pkg-config --libs glib-2.0`
 AC_SUBST(GLIB_CFLAGS)
 AC_SUBST(GLIB_LIBS)
 

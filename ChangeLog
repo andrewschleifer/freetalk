@@ -2,6 +2,24 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2007-11-09 04:26:11 GMT	Anand Babu <ab@zresearch.com>	patch-10
+
+    Summary:
+      configure.ac and man page fixes
+    Revision:
+      freetalk--main--3.0--patch-10
+
+
+    modified files:
+     ChangeLog configure.ac doc/Makefile.am doc/freetalk.1
+
+    renamed files:
+     doc/.arch-ids/freetalk.man.id
+       ==> doc/.arch-ids/freetalk.1.id
+     doc/freetalk.man
+       ==> doc/freetalk.1
+
+
 2007-11-09 00:50:35 GMT	Anand Babu <ab@zresearch.com>	patch-9
 
     Summary:
