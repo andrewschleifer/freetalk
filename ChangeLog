@@ -2,6 +2,18 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2007-11-09 00:50:35 GMT	Anand Babu <ab@zresearch.com>	patch-9
+
+    Summary:
+      NEWS, INSTALL, README, freetalk.scm updated.
+    Revision:
+      freetalk--main--3.0--patch-9
+
+
+    modified files:
+     AUTHORS ChangeLog INSTALL NEWS README examples/freetalk.scm
+
+
 2007-11-03 09:14:35 GMT	Anand Babu <ab@zresearch.com>	patch-8
 
     Summary:
