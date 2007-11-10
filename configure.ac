@@ -15,9 +15,8 @@ AC_PROG_CXX
 
 AC_SEARCH_LIBS([tgetent],[ncurses termcap curses])
 AC_CHECK_LIB([readline], [readline],,AC_MSG_ERROR([ERROR! readline not found...]))
-
-AC_CHECK_LIB([guile],[scm_boot_guile],,AC_MSG_ERROR([ERROR! guile not found...]))
-
+GUILE_FLAGS
+AC_CHECK_LIB([guile],[scm_to_locale_string],,AC_MSG_ERROR([ERROR! Guile 1.8 or above required.]))
 AC_CHECK_LIB([glib-2.0],[g_slist_free],,AC_MSG_ERROR([ERROR! glib-2.0 not found...]))
 GLIB_CFLAGS=`pkg-config --cflags glib-2.0`
 GLIB_LIBS=`pkg-config --libs glib-2.0`

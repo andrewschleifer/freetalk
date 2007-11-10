@@ -1,4 +1,4 @@
-AM_CPPFLAGS= -Wall -g $(GLIB_CFLAGS) $(LOUDMOUTH_CFLAGS) -DDATADIR=\"$(datadir)\" -DLOCALEDIR=\"$(localedir)\"
+AM_CPPFLAGS= -Wall -g $(GUILE_CFLAGS) $(GLIB_CFLAGS) $(LOUDMOUTH_CFLAGS) -DDATADIR=\"$(datadir)\" -DLOCALEDIR=\"$(localedir)\"
 
 bin_PROGRAMS=freetalk
 
@@ -9,5 +9,4 @@ freetalk_SOURCES=freetalk.cc util.cc commands.cc callbacks.cc roster.cc \
 	roster.h interpreter.h extensions.h primitives.h presence.h \
 	file_transfer.h register.h compat.h
 
-freetalk_LDFLAGS=$(LOUDMOUTH_LIBS) $(GLIB_LIBS)
-
+freetalk_LDFLAGS=$(LOUDMOUTH_LIBS) $(GLIB_LIBS) $(GUILE_LDFLAGS)
