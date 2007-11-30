@@ -10,3 +10,5 @@ freetalk_SOURCES=freetalk.cc util.cc commands.cc callbacks.cc roster.cc \
 	file_transfer.h register.h compat.h
 
 freetalk_LDFLAGS=$(LOUDMOUTH_LIBS) $(GLIB_LIBS) $(GUILE_LDFLAGS)
+
+CLEANFILES = *~

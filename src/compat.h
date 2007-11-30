@@ -108,7 +108,7 @@ error_t argp_parse_ (const struct argp * __argp,
 #include <argp.h>
 #endif /* HAVE_ARGP */
 
-/* 
+/*
 #include <libguile.h>
 #if SCM_MAJOR_VERSION == 1 && SCM_MINOR_VERSION == 6
 

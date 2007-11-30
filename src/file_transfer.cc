@@ -218,7 +218,7 @@ int ft_msg_sub_type_set_cb(LmMessage *msg)
 	g_free (incoming.sender);
       
       /* Before sending the 'result' reply, open the file to write to */
-      if ((file->fd = open (file->local_file, O_CREAT | O_WRONLY)) < 0){
+      if ((file->fd = open (file->local_file, O_CREAT | O_WRONLY, S_IWUSR)) < 0){
 	scm_run_hook (ex_notify_file_hook, scm_list_n (scm_from_locale_string (file->sender),
 						       scm_from_locale_string (file->local_file),
 						       scm_from_int (FT_FILE_NO_OPEN),

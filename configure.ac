@@ -9,7 +9,7 @@ AM_INIT_AUTOMAKE
 AC_PREREQ([2.57])
 AC_CONFIG_SRCDIR([src/freetalk.cc])
 
-AC_CONFIG_FILES([Makefile src/Makefile extensions/Makefile extensions/init.scm doc/Makefile po/Makefile.in])
+AC_CONFIG_FILES([Makefile src/Makefile extensions/Makefile extensions/init.scm extensions/first-time-run.sh doc/Makefile po/Makefile.in])
 
 AC_PROG_MAKE_SET
 AC_PROG_CXX

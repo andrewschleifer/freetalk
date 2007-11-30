@@ -2,6 +2,33 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2007-11-30 21:11:24 GMT	Anand Babu <ab@zresearch.com>	patch-17
+
+    Summary:
+      Harsha / Debarshi patch for open and first-time-run fix
+    Revision:
+      freetalk--main--3.0--patch-17
+
+    * added first-time-run.sh.in so that to generate the script during
+      configure rather than having a .sh extension.
+    * open call caused build problems with not having third arg on new
+      Fedora 8
+    * and misc fixes.
+    
+
+    new files:
+     extensions/.arch-ids/first-time-run.sh.in.id
+     extensions/first-time-run.sh.in
+
+    removed files:
+     extensions/.arch-ids/first-time-run.sh.id
+     extensions/first-time-run.sh
+
+    modified files:
+     ChangeLog Makefile.am configure.ac extensions/Makefile.am
+     src/Makefile.am src/compat.h src/file_transfer.cc
+
+
 2007-11-30 04:28:05 GMT	Anand Babu <ab@zresearch.com>	patch-16
 
     Summary:
