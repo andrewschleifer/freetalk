@@ -31,6 +31,7 @@
 #include "roster.h"
 #include "presence.h"
 #include "file_transfer.h"
+#include "compat.h"
 
 SCM ex_load (SCM scm_file)
 {
@@ -72,6 +73,36 @@ SCM ex_set_server (SCM scm_server)
   return SCM_UNSPECIFIED;
 }
 
+SCM 
+ex_get_proxyserver (void)
+{
+  return scm_from_locale_string (do_get_proxyserver ());
+}
+
+SCM 
+ex_set_proxyserver (SCM scm_proxyserver)
+{
+  char *proxyserver = scm_to_locale_string (scm_proxyserver);
+  
+  do_set_proxyserver (proxyserver);
+  free (proxyserver);
+
+  return SCM_UNSPECIFIED;
+}
+
+SCM 
+ex_get_proxyport (void) 
+{
+  return scm_from_int (do_get_proxyport ());
+}
+
+SCM 
+ex_set_proxyport (SCM scm_proxyport) 
+{
+  do_set_proxyport (scm_to_int (scm_proxyport));
+  return SCM_UNSPECIFIED;
+}
+
 SCM ex_get_password (void)
 {
   return scm_from_locale_string (do_get_password ());
@@ -84,6 +115,20 @@ SCM ex_set_password (SCM scm_password)
   do_set_password (password);
   free (password);
 
+  return SCM_UNSPECIFIED;
+}
+
+SCM 
+ex_get_proxy (void)
+{
+  return scm_from_bool (state.need_proxy);
+}
+
+SCM
+ex_set_proxy (SCM scm_proxy)
+{
+  do_set_proxy (scm_to_bool (scm_proxy));
+  
   return SCM_UNSPECIFIED;
 }
 

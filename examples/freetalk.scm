@@ -8,6 +8,16 @@
 ;      (ft-set-prompt! "freetalk: ")
 ;      (ft-set-server! "talk.google.com"))
 
+;; Example proxy configuration
+; (and (string=? (ft-get-jid) "")
+;      (ft-set-jid! "anand.avati@gmail.com")
+;      (ft-set-password! "p4ssw0rd")
+;      (ft-set-sslconn! #t)
+;      (ft-set-prompt! "freetalk: ")
+;      (ft-set-server! "talk.google.com")
+;      (ft-set-proxyserver! "your.proxyserver.net")
+;      (ft-set-proxyport!  "8080"))
+
 ;; Get control after successful login
 ; (add-hook! ft-login-hook
 ;            (lambda (status)

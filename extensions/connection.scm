@@ -66,7 +66,7 @@
   (display (string-append (_ "Enable TLS/SSL (Y/N)? [Y]: ")))
   (let ((ans (read-line-clean)))
     (ft-set-sslconn! (if (or (string=? ans "n")
-			      (string=? ans "N"))
+			     (string=? ans "N"))
 			 #f
 			 #t))))
 
@@ -86,6 +86,26 @@
 		       (read-num-clean)
 		       "0")))
 
+;;;(define (read-proxy)
+;;; (display (string-append (_ "Enable Proxy (Y/N)? [Y]: ")))
+;;; (let ((ans (read-line-clean)))
+;;;    (ft-set-proxy! (if (or (string=? ans "n")
+;;;			   (string=? ans "N"))
+;;;		       #f
+;;;		       #t))))
+
+(define (read-proxyserver)
+  (display (string-append (_ "ProxyServer: ")))
+  (set-if-not-empty! ft-set-proxyserver! (read-line-clean) (ft-get-proxyserver)))
+
+(define (read-proxyport)
+  (let ((proxyport 8080))
+    (display (string-append (_ "ProxyPort [") (number->string proxyport) "]: "))
+    (set-if-not-empty! (lambda (str-num)
+			 (ft-set-proxyport! (string->number str-num)))
+		       (read-num-clean)
+		       "8080")))
+
 (define (/connect args)
   (connect-handle (ft-connect)))
 (add-command! /connect "/connect" "/connect" "connect to jabber server - non blocking")
@@ -101,6 +121,9 @@
     (read-server)
     (read-sslconn)
     (read-port)
+;;;    (read-proxy) : TODO
+    (read-proxyserver)
+    (read-proxyport)
     (connect-handle (ft-connect))))
 (add-command! /login "/login" "/login" "Interactive login to jabber server - blocking")
 

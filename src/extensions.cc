@@ -27,6 +27,7 @@
 #include "freetalk.h"
 #include "roster.h"
 #include "primitives.h"
+#include "compat.h"
 
 SCM ex_message_receive_hook;
 SCM ex_message_send_hook;
@@ -130,6 +131,9 @@ register_primitives ()
   gh_new_procedure0_0 ("ft-get-server", ex_get_server);
   gh_new_procedure1_0 ("ft-set-server!", ex_set_server);
 
+  gh_new_procedure0_0 ("ft-get-proxyserver", ex_get_proxyserver);
+  gh_new_procedure1_0 ("ft-set-proxyserver!", ex_set_proxyserver);
+
   gh_new_procedure0_0 ("ft-get-password", ex_get_password);
   gh_new_procedure1_0 ("ft-set-password!", ex_set_password);
 
@@ -147,6 +151,12 @@ register_primitives ()
 
   gh_new_procedure0_0 ("ft-get-port", ex_get_port);
   gh_new_procedure1_0 ("ft-set-port!", ex_set_port);
+
+  gh_new_procedure0_0 ("ft-get-proxyport", ex_get_proxyport);
+  gh_new_procedure1_0 ("ft-set-proxyport!", ex_set_proxyport);
+  
+  gh_new_procedure0_0 ("ft-get-proxy?", ex_get_proxy);
+  gh_new_procedure1_0 ("ft-set-proxy!", ex_set_proxy);
 
   gh_new_procedure0_0 ("ft-get-prompt", ex_get_prompt);
   gh_new_procedure1_0 ("ft-set-prompt!", ex_set_prompt);

@@ -31,12 +31,18 @@ int do_set_server (const char *server);
 const char * do_get_server (void);
 int do_set_port (unsigned short int port);
 int do_get_port (void);
+int do_set_proxyserver (const char *proxyserver);
+const char * do_get_proxyserver (void);
+int do_set_proxyport (unsigned short int proxyport);
+int do_get_proxyport (void);
 int do_set_password (const char *password);
 const char * do_get_password (void);
 int do_set_prompt (const char *prompt);
 const char * do_get_prompt (void);
 int do_set_ssl (char value);
 int do_get_ssl (void);
+int do_set_proxy (char value);
+int do_get_proxy (void);
 int do_send_message (char *jid, char *msg);
 int do_send_message_no_hook (char *jid, char *msg);
 int do_set_daemon (void); /* switch to daemon mode */

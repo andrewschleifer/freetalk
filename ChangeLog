@@ -2,6 +2,34 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2007-11-30 02:55:51 GMT	Anand Babu <ab@zresearch.com>	patch-15
+
+    Summary:
+      Harsha's proxy support 
+    Revision:
+      freetalk--main--3.0--patch-15
+
+    Proxy support patch from Harsha [harsha(at)zresearch(dot)com]
+    
+    * Freetalk proxy support: currently server based only, user based
+    proxy authentication not done yet.
+    
+    * Added new commands, scheme primitives and corresponding updates to
+    freetalk.scm and freetalk.texi.
+    
+    * Fixes in authors.texi and configure.ac for pkg-config will be
+    checked well before its used.
+
+    modified files:
+     AUTHORS ChangeLog configure.ac doc/authors.texi
+     doc/freetalk.texi examples/freetalk.scm
+     extensions/connection.scm extensions/state.scm
+     src/callbacks.cc src/commands.cc src/commands.h src/compat.cc
+     src/compat.h src/extensions.cc src/file_transfer.cc
+     src/freetalk.h src/interpreter.cc src/primitives.cc
+     src/primitives.h
+
+
 2007-11-10 18:04:10 GMT	Anand Babu <ab@zresearch.com>	patch-14
 
     Summary:

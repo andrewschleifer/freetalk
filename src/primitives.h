@@ -31,6 +31,12 @@ SCM ex_set_jid (SCM scm_jid);
 SCM ex_get_server (void);
 SCM ex_set_server (SCM scm_server);
 
+SCM ex_get_proxyserver (void);
+SCM ex_set_proxyserver (SCM scm_proxyserver);
+
+SCM ex_get_proxy (void);
+SCM ex_set_proxy (SCM scm_proxy);
+
 SCM ex_get_password (void);
 SCM ex_set_password (SCM scm_password);
 
@@ -51,6 +57,9 @@ SCM ex_get_prompt (void);
 
 SCM ex_get_port (void);
 SCM ex_set_port (SCM scm_port);
+
+SCM ex_get_proxyport (void);
+SCM ex_set_proxyport (SCM scm_proxyport);
 
 SCM ex_display (SCM scm_line);
 

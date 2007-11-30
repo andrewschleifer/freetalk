@@ -197,6 +197,9 @@ any argument.
 * greet::                       IRC style greeting message.
 * burst::                       explode chars in the message.
 * burst-of-romance::            simulate multiple hand-made kisses.
+* broadcast::                   broadcast a message to all the roster.
+* proxyserver::                 specify proxyserver for next connect.
+* proxyport::                   specify proxyport for next connect.
 @end menu
 
 
@@ -685,7 +688,7 @@ On the other side avati@@jabber.org gets a message
 @end deffn
 @cmindex burst
 
-@node burst-of-romance,  , burst, Commands
+@node burst-of-romance, broadcast, burst, Commands
 @section Freetalk command - burst-of-romance
 @deffn command /burst BUDDY COUNT MESSAGE
 Send @var{COUNT} number of @var{MESSAGE} to @var{BUDDY} with random
@@ -698,6 +701,54 @@ ab@@jabber.org> /burst hackergirl@@jabber.org 45 :-*
 @end example
 @end deffn
 @cmindex burst-of-romance
+
+@node broadcast, proxyserver, burst-of-romance, Commands
+@section Freetalk command - broadcast
+@deffn command /broadcast MESSAGE
+Send @var{MESSAGE} to all the buddies 
+
+@example
+Example:
+harshavardhana@@jabber.org> /broadcast "Hello All, I am back"
+@end example
+@end deffn
+@cmindex broadcast
+
+@node proxyserver, proxyport, broadcast, Commands
+@section Freetalk command -  proxyserver
+@deffn command /proxyserver [proxyservername]
+Specify the @var{proxyservername} which you want to connect, or display the
+currently set proxyserver.
+
+@example
+~\/~ /proxyserver
+Current ProxyServer:
+~\/~ /proxyserver tc.vip.org
+~\/~ /proxyserver
+Current ProxyServer: tc.vip.org
+~\/~
+@end example
+@end deffn
+@cmindex proxyserver
+
+@node proxyport,  , proxyserver, Commands
+@section Freetalk command - proxyport
+@deffn command /proxyport [proxyport]
+@command{/proxyport} command sets the specified TCP @var{proxyport} to be used
+for the next @command{/connect} or display the currently set proxyport
+
+
+@example
+~\/~ /proxyport
+Current Port (8080 = default): 0
+~\/~
+~\/~ /proxyport 8080
+~\/~ /proxyport 
+Current Port (8080 = default): 8080
+@end example
+@end deffn
+@cmindex proxyport
+
 
 @node Customization, Tips and Tricks, Commands, Top
 @chapter Customizing freetalk
@@ -729,10 +780,13 @@ in this file.
 ;; It sets connection parameters and tries to connect on
 ;; starting freetalk
 (and (strings=? (ft-get-jid) "")
-		(ft-set-jid! "avati@@jabber.org")
-		(ft-set-password! "f00b4r")
-		(ft-set-sslconn! 1)
-		(ft-set-server! "jabber.org"))
+                (ft-set-jid! "avati@@jabber.org")
+                (ft-set-password! "f00b4r")
+                (ft-set-sslconn! 1)
+                (ft-set-server! "jabber.org")
+                ;; Proxy support
+                (ft-set-proxyserver! "your.proxy.org")
+                (ft-set-proxyport! "8080"))
 @end lisp 
 All entries in this file freetalk.scm are optional.How ever there is no 
 limit of cutomizing this file using Guile Interface. (@pxref{Extension language})
@@ -1150,7 +1204,7 @@ Find where the bug is, fix it and send the patches. :)
 @end enumerate
 @end deffn
 
-Send your specific queries to  Vikas Gorur @email{vikasgp@@gmail.com}
+Send your specific queries to  Vikas Gorur @email{vikas@@zresearch.com}
 @cindex freetalk URLs
 
 

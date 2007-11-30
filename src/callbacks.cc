@@ -35,6 +35,7 @@
 #include "presence.h"
 #include "extensions.h"
 #include "file_transfer.h"
+#include "compat.h"
 
 /*
   Callback for SSL verification

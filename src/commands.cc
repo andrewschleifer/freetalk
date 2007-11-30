@@ -57,6 +57,17 @@ do_connect_common ()
   lm_connection_ref (state.conn);
   do_set_conn_status (FT_DEAD);
 
+#ifdef WITH_PROXY
+  if (!state.proxyserver) 
+    return -1;
+
+  state.proxy = lm_proxy_new_with_server (LM_PROXY_TYPE_HTTP,
+				    state.proxyserver,
+				    state.proxyport);
+  lm_connection_set_proxy (state.conn, state.proxy);
+  lm_proxy_unref(state.proxy);
+#endif
+
   lm_connection_set_jid (state.conn, state.jid_str);
 
   if (state.need_ssl) {
@@ -549,3 +560,48 @@ do_change_password (char *npass)
     }
   free (npass);
 }
+
+int 
+do_set_proxy (char value)
+{
+  state.need_proxy = value;
+  return 0;
+}
+
+int 
+do_get_proxy (void)
+{
+  return state.need_proxy;
+}
+
+const char *
+do_get_proxyserver (void)
+{
+  return state.proxyserver ? state.proxyserver : "";
+}
+
+int 
+do_get_proxyport (void)
+{
+  return state.proxyport;
+}
+
+int 
+do_set_proxyserver (const char *proxyserver)
+{
+  if (!proxyserver) 
+    return -1;
+  
+  if (state.proxyserver)
+    free (state.proxyserver);
+  state.proxyserver = strdup (proxyserver);
+  return 0;
+}
+
+int
+do_set_proxyport (unsigned short int proxyport)
+{
+  state.proxyport = proxyport;
+  return 0;
+}
+

@@ -50,6 +50,18 @@
    args))
 (add-command! /port "/port" "/port [PORT]" "set server port for next /connect")
 
+(define (/proxyserver args)
+  (usual-crap ft-get-proxyserver ft-set-proxyserver! "Current ProxyServer: " args))
+(add-command! /proxyserver "/proxyserver" "/proxyserver [HOST|IP]" "set proxy server for next /connect")
+
+(define (/proxyport args)
+  (usual-crap 
+   (lambda () (number->string (ft-get-proxyport)))
+   (lambda (str_proxyport) (ft-set-proxyport! (string->number str_proxyport)))
+   "Current Port (8080 = default): "
+   args))
+(add-command! /proxyport "/proxyport" "/proxyport [PORT]" "set proxyserver port for next /connect")
+
 (add-command! (lambda (str) 
 		(if (> (string-length str) 0)
 		     (ft-load (sans-surrounding-whitespace str))

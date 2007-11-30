@@ -17,7 +17,13 @@ AC_SEARCH_LIBS([tgetent],[ncurses termcap curses])
 AC_CHECK_LIB([readline], [readline],,AC_MSG_ERROR([ERROR! readline not found...]))
 GUILE_FLAGS
 AC_CHECK_LIB([guile],[scm_to_locale_string],,AC_MSG_ERROR([ERROR! Guile 1.8 or above required.]))
-AC_CHECK_LIB([glib-2.0],[g_slist_free],,AC_MSG_ERROR([ERROR! glib-2.0 not found...]))
+
+AC_CHECK_PROG([PKGCONFIG], [pkg-config], [yes], [no])
+if test "x$PKGCONFIG" = "xno"; then
+   AC_MSG_ERROR([pkg-config not found])
+fi
+
+dnl AC_CHECK_LIB([glib-2.0],[g_slist_free],,AC_MSG_ERROR([ERROR! glib-2.0 not found...]))
 GLIB_CFLAGS=`pkg-config --cflags glib-2.0`
 GLIB_LIBS=`pkg-config --libs glib-2.0`
 AC_SUBST(GLIB_CFLAGS)
@@ -41,9 +47,12 @@ AC_CHECK_TYPES([error_t],
 #include <errno.h>
 #endif])
 
-AC_CHECK_PROG([PKGCONFIG], [pkg-config], [yes], [no])
-if test "x$PKGCONFIG" = "xno"; then
-   AC_MSG_ERROR([pkg-config not found])
+AC_ARG_ENABLE([proxy],
+              AC_HELP_STRING([--enable-proxy],
+                             [enable HTTP proxy support for freetalk]))
+
+if test "x$enable_proxy" = "xyes"; then
+   AC_DEFINE(WITH_PROXY, [1])
 fi
 
 dnl Gettext Support

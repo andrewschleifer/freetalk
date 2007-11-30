@@ -35,6 +35,7 @@
 #include "freetalk.h"
 #include "commands.h"
 #include "roster.h"
+#include "compat.h"
 
 GSList *dict_words = NULL;
 

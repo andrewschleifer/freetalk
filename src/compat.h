@@ -108,4 +108,23 @@ error_t argp_parse_ (const struct argp * __argp,
 #include <argp.h>
 #endif /* HAVE_ARGP */
 
+/* 
+#include <libguile.h>
+#if SCM_MAJOR_VERSION == 1 && SCM_MINOR_VERSION == 6
+
+#define scm_is_string(x)          SCM_ROSTRINGP(x)
+#define scm_is_integer(x)         scm_is_true(scm_integer_p (x))
+#define scm_to_int(x)             scm_num2int(x, SCM_ARGn, "scm_to_int")
+#define scm_from_int(x)           scm_int2num(x)
+#define scm_is_true(x)            SCM_NFALSEP(x)
+#define scm_is_false(x)           SCM_FALSEP(x)
+#define scm_from_locale_string(x) scm_makfrom0str(x)
+#define scm_to_locale_string(x)   strdup(SCM_STRING_CHARS(x))
+#define scm_to_size_t(x)          scm_num2uint(x, SCM_ARGn, "scm_to_size_t")
+#define scm_from_ulong(x)         scm_ulong2num (x)
+#define scm_from_bool(x)          SCM_BOOL(x)
+#define scm_to_bool(x)            (!SCM_FALSEP (x))
+
+#endif */
+
 #endif /* __COMPAT_H__ */

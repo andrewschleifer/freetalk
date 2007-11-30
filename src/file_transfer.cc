@@ -33,7 +33,7 @@
 #include "freetalk.h"
 #include "extensions.h"
 #include "file_transfer.h"
-
+#include "compat.h"
 
 /* file-transfer: implementation howto
  *

@@ -64,6 +64,10 @@ typedef struct {
   GSList *f_state; /* file transfer states - linked list */
   char *download_dirname; /* default directory where all files xfered go */
   time_t last;
+  char need_proxy;
+  char *proxyserver;
+  unsigned short proxyport;
+  LmProxy *proxy;
 } ft_state;
 
 extern ft_state state;
