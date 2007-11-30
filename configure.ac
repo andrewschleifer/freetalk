@@ -1,4 +1,5 @@
-dnl Copyright 2007 Freetalk Core Team
+dnl Copyright 200, 2006, 2007 Freetalk Core Team
+dnl GNU General Publicense v3 or later
     
 dnl Process this file with autoconf to produce a configure script
 

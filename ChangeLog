@@ -2,6 +2,36 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2007-11-30 04:28:05 GMT	Anand Babu <ab@zresearch.com>	patch-16
+
+    Summary:
+      updated GPLv3 license text across the code base
+    Revision:
+      freetalk--main--3.0--patch-16
+
+
+    modified files:
+     ChangeLog configure.ac doc/freetalk.texi extensions/beep.scm
+     extensions/broadcast.scm extensions/color.scm
+     extensions/connection.scm extensions/dict-buddy.scm
+     extensions/dyn-commands.scm extensions/file-transfer.scm
+     extensions/first-time-run.sh extensions/hacker-romance.scm
+     extensions/history.scm extensions/init.scm.in
+     extensions/login.scm extensions/loudscream.scm
+     extensions/mr-oxford.scm extensions/pipe.scm
+     extensions/proud-of-freetalk.scm extensions/roster.scm
+     extensions/shell.scm extensions/state.scm extensions/url.scm
+     extensions/utils.scm src/callbacks.cc src/callbacks.h
+     src/commands.cc src/commands.h src/compat.cc src/compat.h
+     src/extensions.cc src/extensions.h src/file_transfer.cc
+     src/file_transfer.h src/freetalk.cc src/freetalk.h
+     src/interpreter.cc src/interpreter.h src/loudscream.cc
+     src/loudscream.h src/presence.cc src/presence.h
+     src/primitives.cc src/primitives.h src/register.cc
+     src/register.h src/roster.cc src/roster.h src/util.cc
+     src/util.h
+
+
 2007-11-30 02:55:51 GMT	Anand Babu <ab@zresearch.com>	patch-15
 
     Summary:

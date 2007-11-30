@@ -1254,7 +1254,7 @@ not listed here, please let us know so that we can update it.
 
 @node Freetalk License, Freetalk Documentation License, Portability, Portability
 @section Freetalk License
-Freetalk licensed under GNU General Public License v2 or later.
+Freetalk licensed under GNU General Public License v3 or later.
 @include gpl.texi
 
 @node Freetalk Documentation License,  , Freetalk License, Portability
