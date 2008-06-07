@@ -439,7 +439,7 @@ do_add (char *jid)
 int
 do_set_status_msg (char *status)
 {
-  const char *valid[] = { "online", "away", "chat", "xa", "dnd", NULL }, *text = NULL;
+  const char *valid[] = { "online", "away", "chat", "xa", "dnd", "invisible", NULL }, *text = NULL;
   int show, offset;
   
   if((text = strchr(status, ' '))) {
@@ -454,7 +454,7 @@ do_set_status_msg (char *status)
     }
   }
   if( !valid[show] ) {
-    PRINTF ("Status must be one of [online|away|chat|xa|dnd]");
+    PRINTF ("Status must be one of [online|away|chat|xa|dnd|invisible]");
     return -1;
   }
   if (state.status_msg)
@@ -463,7 +463,11 @@ do_set_status_msg (char *status)
 
   LmMessage *msg = lm_message_new (NULL, LM_MESSAGE_TYPE_PRESENCE);
   if( show != 0 ) { // online status is implicit
-    lm_message_node_add_child (msg->node, "show", valid[show]);
+    if (!strcmp (valid[show], "invisible")) {
+      lm_message_node_set_attribute (msg->node, "type", "unavailable");
+    } else {
+      lm_message_node_add_child (msg->node, "show", valid[show]);
+    }
   }
   if( text != NULL ) {
     lm_message_node_add_child (msg->node, "status", text);

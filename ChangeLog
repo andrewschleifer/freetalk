@@ -2,6 +2,26 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2008-06-07 15:41:34 GMT	Anand Babu <ab@zresearch.com>	patch-18
+
+    Summary:
+      Harsha's invisible status + guile-compat patch
+    Revision:
+      freetalk--main--3.0--patch-18
+
+
+    modified files:
+     ChangeLog configure.ac doc/Makefile.am examples/hello-world.ft
+     extensions/init.scm.in extensions/state.scm src/commands.cc
+     src/compat.h
+
+    renamed files:
+     examples/.arch-ids/ping.ft.id
+       ==> examples/.arch-ids/hello-world.ft.id
+     examples/ping.ft
+       ==> examples/hello-world.ft
+
+
 2007-11-30 21:11:24 GMT	Anand Babu <ab@zresearch.com>	patch-17
 
     Summary:

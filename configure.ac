@@ -17,7 +17,7 @@ AC_PROG_CXX
 AC_SEARCH_LIBS([tgetent],[ncurses termcap curses])
 AC_CHECK_LIB([readline], [readline],,AC_MSG_ERROR([ERROR! readline not found...]))
 GUILE_FLAGS
-AC_CHECK_LIB([guile],[scm_to_locale_string],,AC_MSG_ERROR([ERROR! Guile 1.8 or above required.]))
+AC_CHECK_LIB([guile],[scm_boot_guile],,AC_MSG_ERROR([ERROR! Guile 1.6 or above required.]))
 
 AC_CHECK_PROG([PKGCONFIG], [pkg-config], [yes], [no])
 if test "x$PKGCONFIG" = "xno"; then
