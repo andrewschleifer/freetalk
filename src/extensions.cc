@@ -133,6 +133,12 @@ register_primitives ()
   gh_new_procedure0_0 ("ft-get-proxyserver", ex_get_proxyserver);
   gh_new_procedure1_0 ("ft-set-proxyserver!", ex_set_proxyserver);
 
+  gh_new_procedure0_0 ("ft-get-proxyuname", ex_get_proxyuname);
+  gh_new_procedure1_0 ("ft-set-proxyuname!", ex_set_proxyuname);
+
+  gh_new_procedure0_0 ("ft-get-proxypasswd", ex_get_proxypasswd);
+  gh_new_procedure1_0 ("ft-set-proxypasswd!", ex_set_proxypasswd);
+
   gh_new_procedure0_0 ("ft-get-password", ex_get_password);
   gh_new_procedure1_0 ("ft-set-password!", ex_set_password);
 

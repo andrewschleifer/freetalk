@@ -61,6 +61,7 @@ state_init (void)
   state.config_dir = (char *)calloc (1, strlen (getenv ("HOME")) + 1 + strlen (".freetalk") + 1);
   sprintf (state.config_dir, "%s/.freetalk", getenv ("HOME"));
   state.need_ssl = 1; /* turn on ssl by default */
+  state.need_proxy = 0; /* turn off proxy by default */
   state.f_state = NULL;
   state.download_dirname = (char *)calloc (1, strlen (getenv ("HOME")) + 1 + strlen (".freetalk/downloads") + 1);
   sprintf (state.download_dirname, "%s/.freetalk/downloads", getenv ("HOME"));

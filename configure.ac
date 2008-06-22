@@ -48,14 +48,6 @@ AC_CHECK_TYPES([error_t],
 #include <errno.h>
 #endif])
 
-AC_ARG_ENABLE([proxy],
-              AC_HELP_STRING([--enable-proxy],
-                             [enable HTTP proxy support for freetalk]))
-
-if test "x$enable_proxy" = "xyes"; then
-   AC_DEFINE(WITH_PROXY, [1])
-fi
-
 dnl Gettext Support
 AM_GNU_GETTEXT([external])
 AM_GNU_GETTEXT_VERSION([0.16.1])

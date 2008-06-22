@@ -61,6 +61,15 @@
    args))
 (add-command! /proxyport "/proxyport" "/proxyport [PORT]" "set proxyserver port for next /connect")
 
+(define (/proxyuname args)
+  (usual-crap ft-get-proxyuname ft-set-proxyuname! "Current ProxyUname: " args))
+(add-command! /proxyuname "/proxyuname" "/proxyuname [PROXYUSERNAME]" "set proxy username for next /connect")
+
+(define (/proxypasswd args)
+  (ft-set-proxypasswd! (getpass "ProxyPassword: ")))
+(add-command! /proxypasswd "/proxypasswd" "/proxypasswd" "set proxy password for next /connect")
+
+
 (add-command! (lambda (str) 
 		(if (> (string-length str) 0)
 		     (ft-load (sans-surrounding-whitespace str))

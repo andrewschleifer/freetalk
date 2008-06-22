@@ -56,16 +56,26 @@ do_connect_common ()
   lm_connection_ref (state.conn);
   do_set_conn_status (FT_DEAD);
 
-#ifdef WITH_PROXY
-  if (!state.proxyserver) 
-    return -1;
+  /* Proxy Support */
 
-  state.proxy = lm_proxy_new_with_server (LM_PROXY_TYPE_HTTP,
-				    state.proxyserver,
-				    state.proxyport);
-  lm_connection_set_proxy (state.conn, state.proxy);
-  lm_proxy_unref(state.proxy);
-#endif
+  if (state.need_proxy) {
+
+    if (!state.proxyserver) 
+      return -5;
+
+    state.proxy = lm_proxy_new_with_server (LM_PROXY_TYPE_HTTP,
+					    state.proxyserver,
+					    state.proxyport);
+    if (!state.proxyuname) state.proxyuname = NULL;
+    if (!state.proxypasswd) state.proxypasswd = NULL;
+    
+    lm_proxy_set_username (state.proxy, state.proxyuname);
+    lm_proxy_set_password (state.proxy, state.proxypasswd);
+    
+    lm_connection_set_proxy (state.conn, state.proxy);
+    lm_proxy_unref(state.proxy);
+  }
+
 
   lm_connection_set_jid (state.conn, state.jid_str);
 
@@ -313,8 +323,17 @@ do_send_message_no_hook (char *jid, char *msg_str)
     return -1;
 
   msg = lm_message_new (jid, LM_MESSAGE_TYPE_MESSAGE);
-  lm_message_node_set_attribute (msg->node, "type", "chat");
-  lm_message_node_add_child (msg->node, "body", msg_str);
+
+  //  Intermediate Invisible mode messaging fix : TODO
+  //if (!strcmp (do_get_status_msg (), "invisible")) {
+  //  lm_message_node_set_attribute (msg->node, "type", "chat");
+  //  lm_message_node_add_child (msg->node, "body", msg_str);
+  //  lm_message_node_add_child (msg->node, "priority", priority);
+  //} else {
+    lm_message_node_set_attribute (msg->node, "type", "chat");
+    lm_message_node_add_child (msg->node, "body", msg_str);
+    //}
+
   return lm_connection_send (state.conn, msg, NULL);
 }
 
@@ -605,6 +624,47 @@ int
 do_set_proxyport (unsigned short int proxyport)
 {
   state.proxyport = proxyport;
+  return 0;
+}
+
+
+const char *
+do_get_proxyuname (void) 
+{
+  return state.proxyuname ? state.proxyuname : "";
+}
+
+const char *
+do_get_proxypasswd (void)
+{
+  return state.proxypasswd ? state.proxypasswd : "";
+}
+
+int 
+do_set_proxyuname (const char *proxyuname) 
+{
+  if (!proxyuname) 
+    return -1;
+
+  if (state.proxyuname)
+    free (state.proxyuname);
+
+  state.proxyuname = strdup (proxyuname);
+
+  return 0;
+}
+
+int 
+do_set_proxypasswd (const char *proxypasswd) 
+{
+  if (!proxypasswd) 
+    return -1;
+
+  if (state.proxypasswd)
+    free (state.proxypasswd);
+
+  state.proxypasswd = strdup (proxypasswd);
+
   return 0;
 }
 

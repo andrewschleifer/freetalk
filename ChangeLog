@@ -2,6 +2,31 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2008-06-22 03:58:47 GMT	Anand Babu <ab@zresearch.com>	patch-19
+
+    Summary:
+      Harsha's <harsha@gluster.com> full proxy support patch
+    Revision:
+      freetalk--main--3.0--patch-19
+
+    1. Full Proxy support, with some TODO's finished.
+    2. New bindings for ProxyUsername and ProxyPasswd.
+    3. By default proxy is disabled but could be enabled on request
+       with /login command asking an "Y/N" prompt.
+    
+    
+
+    new files:
+     .arch-ids/TODO.id TODO
+
+    modified files:
+     ChangeLog configure.ac extensions/connection.scm
+     extensions/first-time-run.sh.in extensions/state.scm
+     src/commands.cc src/commands.h src/extensions.cc
+     src/freetalk.cc src/freetalk.h src/primitives.cc
+     src/primitives.h
+
+
 2008-06-07 15:41:34 GMT	Anand Babu <ab@zresearch.com>	patch-18
 
     Summary:

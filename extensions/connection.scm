@@ -24,6 +24,7 @@
 	((= ret -1) (ft-display (_ "Server not set")))
 	((= ret -2) (ft-display (_ "JID not set")))
 	((= ret -3) (ft-display (_ "SSL support not available")))
+	((= ret -5) (ft-display (_ "Proxy Server not set")))
 	(else (ft-display (string-append (_ "Error, could not connect : ")
                                      (number->string ret))))))
 
@@ -86,13 +87,13 @@
 		       (read-num-clean)
 		       "0")))
 
-;;;(define (read-proxy)
-;;; (display (string-append (_ "Enable Proxy (Y/N)? [Y]: ")))
-;;; (let ((ans (read-line-clean)))
-;;;    (ft-set-proxy! (if (or (string=? ans "n")
-;;;			   (string=? ans "N"))
-;;;		       #f
-;;;		       #t))))
+(define (read-proxy)
+  (display (string-append (_ "Enable Proxy (Y/N)? [Y]: ")))
+  (let ((ans (read-line-clean)))
+    (ft-set-proxy! (if (or (string=? ans "n")
+			   (string=? ans "N"))
+		       #f
+		       #t))))
 
 (define (read-proxyserver)
   (display (string-append (_ "ProxyServer: ")))
@@ -105,6 +106,13 @@
 			 (ft-set-proxyport! (string->number str-num)))
 		       (read-num-clean)
 		       "8080")))
+
+(define (read-proxyuname)
+  (display (string-append (_ "ProxyUsername: ")))
+  (set-if-not-empty! ft-set-proxyuname! (read-line-clean) (ft-get-proxyuname)))
+
+(define (read-proxypasswd)
+  (set-if-not-empty! ft-set-proxypasswd! (getpass "ProxyPassword: ") ""))
 
 (define (/connect args)
   (connect-handle (ft-connect)))
@@ -121,9 +129,14 @@
     (read-server)
     (read-sslconn)
     (read-port)
-;;;    (read-proxy) : TODO
-    (read-proxyserver)
-    (read-proxyport)
+    (read-proxy)
+    (if (ft-get-proxy?)
+	(begin
+	  (read-proxyserver)
+	  (read-proxyport)
+	  (read-proxyuname)
+	  (read-proxypasswd)
+	""))
     (connect-handle (ft-connect))))
 (add-command! /login "/login" "/login" "Interactive login to jabber server - blocking")
 

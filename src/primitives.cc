@@ -101,12 +101,48 @@ ex_set_proxyport (SCM scm_proxyport)
   return SCM_UNSPECIFIED;
 }
 
-SCM ex_get_password (void)
+SCM
+ex_set_proxyuname (SCM scm_proxyuname) 
+{
+  char *proxyuname = scm_to_locale_string (scm_proxyuname);
+  
+  do_set_proxyuname (proxyuname);
+  free (proxyuname);
+
+  return SCM_UNSPECIFIED;
+}
+
+SCM
+ex_get_proxyuname (void)
+{
+  return scm_from_locale_string (do_get_proxyuname ());
+}
+
+SCM 
+ex_set_proxypasswd (SCM scm_proxypasswd)
+{
+  char *proxypasswd = scm_to_locale_string (scm_proxypasswd);
+
+  do_set_proxypasswd (proxypasswd);
+  free (proxypasswd);
+
+  return SCM_UNSPECIFIED;
+}
+
+SCM
+ex_get_proxypasswd (void)
+{
+  return scm_from_locale_string (do_get_proxypasswd ());
+}
+
+SCM 
+ex_get_password (void)
 {
   return scm_from_locale_string (do_get_password ());
 }
 
-SCM ex_set_password (SCM scm_password)
+SCM 
+ex_set_password (SCM scm_password)
 {
   char *password = scm_to_locale_string (scm_password);
 
@@ -130,24 +166,28 @@ ex_set_proxy (SCM scm_proxy)
   return SCM_UNSPECIFIED;
 }
 
-SCM ex_get_sslconn (void)
+SCM 
+ex_get_sslconn (void)
 {
   return scm_from_bool (state.need_ssl);
 }
 
-SCM ex_set_sslconn (SCM scm_ssl)
+SCM 
+ex_set_sslconn (SCM scm_ssl)
 {
   do_set_ssl (scm_to_bool (scm_ssl));
 
   return SCM_UNSPECIFIED;
 }
 
-SCM ex_connect (void)
+SCM 
+ex_connect (void)
 {
   return scm_from_int (do_connect());
 }
 
-SCM ex_disconnect (void)
+SCM 
+ex_disconnect (void)
 {
   do_disconnect ();
 

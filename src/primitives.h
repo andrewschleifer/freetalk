@@ -36,6 +36,12 @@ SCM ex_set_proxyserver (SCM scm_proxyserver);
 SCM ex_get_proxy (void);
 SCM ex_set_proxy (SCM scm_proxy);
 
+SCM ex_get_proxyuname (void);
+SCM ex_set_proxyuname (SCM scm_proxyuname);
+
+SCM ex_get_proxypasswd (void);
+SCM ex_set_proxypasswd (SCM scm_proxypasswd);
+
 SCM ex_get_password (void);
 SCM ex_set_password (SCM scm_password);
 

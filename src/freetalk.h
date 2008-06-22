@@ -66,6 +66,8 @@ typedef struct {
   char need_proxy;
   char *proxyserver;
   unsigned short proxyport;
+  char *proxyuname;
+  char *proxypasswd;
   LmProxy *proxy;
 } ft_state;
 
