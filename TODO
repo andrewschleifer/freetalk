@@ -12,3 +12,6 @@
     under invisible mode and other modes too. 
 
  4. Show idle if no activity on the terminal for 5 or more minutes. 
+
+ 5. Fix needed in handling of a notification of a statement "typing... " to be sent to Gtalk 
+    while the user is typing some content to be sent on the terminal of freetalk.  
