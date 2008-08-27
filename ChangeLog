@@ -2,6 +2,22 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2008-08-27 09:37:18 GMT	Anand Babu <ab@zresearch.com>	patch-22
+
+    Summary:
+      added missing examples/Makefile.am
+    Revision:
+      freetalk--main--3.0--patch-22
+
+    * Forgot in the last commit :P
+
+    new files:
+     examples/.arch-ids/Makefile.am.id examples/Makefile.am
+
+    modified files:
+     ChangeLog
+
+
 2008-08-27 09:33:44 GMT	Anand Babu <ab@zresearch.com>	patch-21
 
     Summary:
