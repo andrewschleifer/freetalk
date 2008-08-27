@@ -2,6 +2,23 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2008-08-27 09:33:44 GMT	Anand Babu <ab@zresearch.com>	patch-21
+
+    Summary:
+      3.1 release
+    Revision:
+      freetalk--main--3.0--patch-21
+
+    * Fixed inclusion of examples/.arch-ids in dist tar ball
+    * Applied Kartik Mistry's debian patches 
+      - 01_manpage_fix.dpatch
+      - 02_bashisms.dpatch patches
+
+    modified files:
+     ChangeLog Makefile.am configure.ac doc/freetalk.1
+     extensions/first-time-run.sh.in
+
+
 2008-07-12 13:18:28 GMT	Harshavardhana (y4m4) <harsha@gluster.com>	patch-20
 
     Summary:

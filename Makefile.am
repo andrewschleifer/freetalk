@@ -1,4 +1,4 @@
-SUBDIRS = src extensions doc po 
+SUBDIRS = src extensions doc po examples
 
 PACKAGE = @PACKAGE@
 VERSION = @VERSION@
@@ -8,6 +8,6 @@ LOUDMOUTH_LIBS = @LOUDMOUTH_LIBS@
 
 ACLOCAL_AMFLAGS = -I m4
 
-EXTRA_DIST = examples autogen.sh
+EXTRA_DIST =autogen.sh
 
 CLEANFILES = *~

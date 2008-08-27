@@ -3,13 +3,13 @@ dnl GNU General Publicense v3 or later
     
 dnl Process this file with autoconf to produce a configure script
 
-AC_INIT([freetalk], [3.0], [freetalk-dev@gnu.org])
+AC_INIT([freetalk], [3.1], [freetalk-dev@gnu.org])
 AM_INIT_AUTOMAKE
 
 AC_PREREQ([2.57])
 AC_CONFIG_SRCDIR([src/freetalk.cc])
 
-AC_CONFIG_FILES([Makefile src/Makefile extensions/Makefile extensions/init.scm extensions/first-time-run.sh doc/Makefile po/Makefile.in])
+AC_CONFIG_FILES([Makefile src/Makefile extensions/Makefile extensions/init.scm extensions/first-time-run.sh doc/Makefile po/Makefile.in examples/Makefile])
 
 AC_PROG_MAKE_SET
 AC_PROG_CXX
