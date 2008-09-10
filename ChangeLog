@@ -2,6 +2,18 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2008-09-10 10:04:01 GMT	Anand Babu <ab@zresearch.com>	patch-23
+
+    Summary:
+      display nickname in status updates
+    Revision:
+      freetalk--main--3.0--patch-23
+
+
+    modified files:
+     ChangeLog extensions/roster.scm
+
+
 2008-08-27 09:37:18 GMT	Anand Babu <ab@zresearch.com>	patch-22
 
     Summary:
