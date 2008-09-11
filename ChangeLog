@@ -2,6 +2,18 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2008-09-11 01:14:17 GMT	Anand Babu <ab@zresearch.com>	patch-24
+
+    Summary:
+      little more beautification of status messages
+    Revision:
+      freetalk--main--3.0--patch-24
+
+
+    modified files:
+     ChangeLog extensions/roster.scm
+
+
 2008-09-10 10:04:01 GMT	Anand Babu <ab@zresearch.com>	patch-23
 
     Summary:

@@ -106,10 +106,14 @@
                   (not (string=? old-show-msg show-msg)) 
                   (not (string=? old-status-msg status-msg)))
               ; using old-jid is a simple way to strip away the resource part ;)
-              (ft-display (string-append old-jid " (" old-nickname ") is now " 
+              (ft-display (string-append old-jid 
+					 (if (> (string-length old-nickname) 0)
+					     (string-append " (" old-nickname ")")
+					     "")
+					 (_ " is now")
                                          (if online  
-                                             (_ "Online") 
-                                             (_ "Logoff"))
+                                             (_ " Online") 
+                                             (_ " Offline"))
                                          (if (> (string-length show-msg) 0)
                                              (string-append " [" (pretty-print-show-msg show-msg) "]")
                                              "")
