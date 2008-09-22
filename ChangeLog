@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2008-09-22 08:05:09 GMT	Harshavardhana (y4m4) <harsha@gluster.com>	patch-25
+
+    Summary:
+      
+    Revision:
+      freetalk--main--3.0--patch-25
+
+    * Fixed warnings thrown when compiled with -D_FORTIFY_SOURCE=1 
+    
+
+    modified files:
+     ChangeLog src/commands.cc src/file_transfer.cc
+
+
 2008-09-11 01:14:17 GMT	Anand Babu <ab@zresearch.com>	patch-24
 
     Summary:

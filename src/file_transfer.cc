@@ -291,6 +291,7 @@ int ft_send_file_message_data(LmMessage *msg)
   GSList *file_slist = NULL;
   char *file_data = NULL;
   int data_len = -1;
+  int ret = 0;
 
   child_node = lm_message_node_get_child (msg->node, "data");
   if (child_node){
@@ -323,14 +324,14 @@ int ft_send_file_message_data(LmMessage *msg)
   file_data = g_strdup (lm_message_node_get_value (child_node));
   data_len = strlen (file_data);
 
-  write (file->fd, file_data, data_len);
+  ret = write (file->fd, file_data, data_len);
 
   if (file_data){
     g_free (file_data);
   }
 
   
-  return 0;
+  return ret;
 }
 /* transfer the file using In-Band Bytestream */
 static int ft_do_send_file(char *reciever, char *file)

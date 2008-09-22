@@ -400,9 +400,10 @@ do_get_buddy_list (void)
 int
 do_set_daemon (void)
 {
+  int ret=0;
   state.daemon = 1; /* no way out */
-  daemon (0, 0);
-  return 0;
+  ret = daemon (0, 0);
+  return ret;
 }
 
 int
