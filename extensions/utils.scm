@@ -86,7 +86,7 @@
 (define (local-date-time)
   (string-append
                  (strftime "%F" (localtime (current-time)))
-		 "-"
+		 " "
                  (strftime "%T" (localtime (current-time)))))
 
 

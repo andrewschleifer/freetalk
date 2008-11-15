@@ -17,9 +17,9 @@
 ;;; <http://www.gnu.org/licenses/>.
 
 (use-modules (ice-9 rdelim))
-(use-modules (ice-9 debugger))
 (use-modules (ice-9 format))
-(debug-enable 'backtrace)
+; (use-modules (ice-9 debugger))
+; (debug-enable 'backtrace)
 
 (if (defined? 'gettext)
     (begin

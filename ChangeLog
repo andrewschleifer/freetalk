@@ -2,6 +2,21 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2008-11-15 09:04:47 GMT	Anand Babu <ab@zresearch.com>	patch-26
+
+    Summary:
+      fixed startup pause bug and time stamp support
+    Revision:
+      freetalk--main--3.0--patch-26
+
+    * Fixed unnecessary startup pause bug caused by debugger mode in init.scm.
+    * Time stamp support for received messages.
+
+    modified files:
+     AUTHORS ChangeLog configure.ac extensions/color.scm
+     extensions/init.scm.in extensions/utils.scm
+
+
 2008-09-22 08:05:09 GMT	Harshavardhana (y4m4) <harsha@gluster.com>	patch-25
 
     Summary:
