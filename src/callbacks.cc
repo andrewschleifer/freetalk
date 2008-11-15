@@ -98,20 +98,12 @@ static char *
 parse_timestamp (const char *ts)
 {
   /* format: "YYYY-MM-DD hh:mm:ss" */
-  /* ts format: yyyymmddThhmmss */
+  /* ts format: 20021209T23:51:30 */
+
   const char *format = "YYYY-MM-DD hh:mm:ss";
-
-  char *time = g_new (char, strlen (format));
-
-  strncpy (time, ts, 4);
-  strncpy (time+4, "-", 1);
-  strncpy (time+5, ts+4, 2);
-  strncpy (time+7, "-", 1);
-  strncpy (time+8, ts+6, 2);
-  strncpy (time+10, " ", 1);
-
-  strcpy (time+11, ts+9);
-
+  int format_len = strlen (format);
+  char *time = g_new (char, format_len);
+  strftime (time, format_len, "%Y-%m-%d %I:%M%p", lm_utils_get_localtime (ts));
   return time;
 }
 

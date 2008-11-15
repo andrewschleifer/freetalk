@@ -120,7 +120,7 @@
 		    (if (> (string-length timestamp) 0)
 			(color-message (string-append "[" timestamp "] ")
 				       (get-buddy-color from))
-			(color-message (strftime "%l:%M%p " (localtime (current-time)))
+			(color-message (strftime "%I:%M%p " (localtime (current-time)))
 				       (get-buddy-color from)))
 		    (color-message (if (> (string-length nickname) 0)
 				       nickname
