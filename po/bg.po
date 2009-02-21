@@ -1,0 +1,314 @@
+# Bulgarian translation of GNU Freetalk.
+# Copyright (C) 2009 Free Software Foundation, Inc.
+# Yavor Doganov <yavor@gnu.org>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: freetalk 3.2\n"
+"Report-Msgid-Bugs-To: freetalk-dev@gnu.org\n"
+"POT-Creation-Date: 2008-11-15 02:44-0800\n"
+"PO-Revision-Date: 2009-01-13 01:01+0200\n"
+"Last-Translator: Yavor Doganov <yavor@gnu.org>\n"
+"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/freetalk.cc:73
+msgid "No such command or buddy. See /help"
+msgstr "Няма такава команда или контакт. Вижте /help."
+
+#: src/callbacks.cc:73 src/commands.cc:159
+msgid "Connected."
+msgstr "Свързан."
+
+#: src/callbacks.cc:78 src/commands.cc:155
+msgid "Could not connect."
+msgstr "Неуспех при свързването."
+
+#: src/callbacks.cc:82 src/commands.cc:163
+msgid "Authenticating ..."
+msgstr "Удостоверяване…"
+
+#: src/callbacks.cc:135
+#, c-format
+msgid "[message of type '%s']"
+msgstr "[съобщение от вид „%s“]"
+
+#: src/callbacks.cc:235
+#, c-format
+msgid "[iq received: %s (unhandled yet)]"
+msgstr "[получено iq: %s (все още не се обработва)]"
+
+#: src/callbacks.cc:241
+msgid "[iq received: (unhandled yet)]"
+msgstr "[получено iq: (все още не се обработва)]"
+
+#: src/commands.cc:110 src/commands.cc:152
+msgid "Connecting ..."
+msgstr "Свързване…"
+
+#: src/primitives.cc:301
+msgid "Not connected, (use /connect)"
+msgstr "Не сте свързани (използвайте /connect)"
+
+#: src/roster.cc:99 src/roster.cc:113
+msgid "none"
+msgstr "без"
+
+#: src/roster.cc:101
+msgid "pending"
+msgstr "висящо"
+
+#: src/roster.cc:103
+msgid "from"
+msgstr "от"
+
+#: src/roster.cc:105
+msgid "from + pending"
+msgstr "от + висящо"
+
+#: src/roster.cc:107
+msgid "to"
+msgstr "към"
+
+#: src/roster.cc:109
+msgid "both"
+msgstr "двустранно"
+
+#: src/roster.cc:191
+#, c-format
+msgid "[%s nickname: %s -> %s]"
+msgstr "[псевдоним на %s: %s -> %s]"
+
+#: src/roster.cc:198
+#, c-format
+msgid "[%s subscription: %s -> %s]"
+msgstr "[записване за %s: %s -> %s]"
+
+#: src/roster.cc:207
+#, c-format
+msgid "[%s removed from buddy list]"
+msgstr "[%s бе премахнат от списъка с контакти]"
+
+#: extensions/color.scm:140
+msgid " BUDDY coloring enabled "
+msgstr " Осветяването на контакти е включено"
+
+#: extensions/color.scm:147
+msgid " BUDDY coloring disabled "
+msgstr " Осветяването на контакти е изключено"
+
+#: extensions/connection.scm:23
+msgid "Already connected"
+msgstr "Вече сте свързани"
+
+#: extensions/connection.scm:24
+msgid "Server not set"
+msgstr "Не е зададен сървър"
+
+#: extensions/connection.scm:25
+msgid "JID not set"
+msgstr "Не е зададен JID"
+
+#: extensions/connection.scm:26
+msgid "SSL support not available"
+msgstr "Липсва поддръжка на SSL"
+
+#: extensions/connection.scm:27
+msgid "Proxy Server not set"
+msgstr "Не е зададен сървър-посредник"
+
+#: extensions/connection.scm:28
+msgid "Error, could not connect : "
+msgstr "Грешка при свързване: "
+
+#: extensions/connection.scm:67
+msgid "Enable TLS/SSL (Y/N)? [Y]: "
+msgstr "Активиране на TLS/SSL (Y/N)? [Y]: "
+
+#: extensions/connection.scm:84
+msgid "Port ["
+msgstr "Порт ["
+
+#: extensions/connection.scm:91
+msgid "Enable Proxy (Y/N)? [Y]: "
+msgstr "Включване на сървър-посредник (Y/N)? [Y]: "
+
+#: extensions/connection.scm:99
+msgid "ProxyServer: "
+msgstr "Сървър-посредник: "
+
+#: extensions/connection.scm:104
+msgid "ProxyPort ["
+msgstr "Порт на сървъра-посредник ["
+
+#: extensions/connection.scm:111
+msgid "ProxyUsername: "
+msgstr "Потребителско име за сървър-посредник: "
+
+#: extensions/connection.scm:125
+msgid "Already Logged in. /disconnect first"
+msgstr "Вече сте свързани. (Първо използвайте /disconnect)"
+
+#: extensions/connection.scm:154
+msgid "Could not login."
+msgstr "Неуспех при свързване."
+
+#: extensions/dyn-commands.scm:30
+msgid "freetalk: error: command ["
+msgstr "freetalk: грешка: командата ["
+
+#: extensions/dyn-commands.scm:32
+msgid "] not bound to any procedure\n"
+msgstr "] не е свързана с нито една процедура\n"
+
+#: extensions/dyn-commands.scm:54
+msgid "no such command\n"
+msgstr "няма такава команда\n"
+
+#: extensions/file-transfer.scm:23
+msgid "No file to send"
+msgstr "Не е указан файл за изпращане"
+
+#: extensions/file-transfer.scm:31
+msgid "Bad ID\n"
+msgstr "Невалиден идентификатор\n"
+
+#: extensions/file-transfer.scm:36
+msgid "Invalid filename\n"
+msgstr "Невалидно име на файл\n"
+
+#: extensions/file-transfer.scm:50
+msgid "Missing cookie number"
+msgstr "Липсва номер на бисквитката"
+
+#: extensions/file-transfer.scm:58
+msgid "[use /allow-file "
+msgstr "[използвайте /allow-file "
+
+#: extensions/file-transfer.scm:58
+msgid " [file-name] to accept]"
+msgstr " [име на файл] за да потвърдите]"
+
+#: extensions/file-transfer.scm:61
+msgid " does not support IBB for file transfer]"
+msgstr " не поддържа IBB за файлов трансфер]"
+
+#: extensions/file-transfer.scm:62
+msgid "[failed to open file "
+msgstr "[неуспех при отваряне на файл "
+
+#: extensions/proud-of-freetalk.scm:33
+msgid "Told ["
+msgstr "Казах на ["
+
+#: extensions/proud-of-freetalk.scm:35
+msgid "] that I'm proud of using Freetalk"
+msgstr "], че съм горд потребител на Freetalk"
+
+#: extensions/proud-of-freetalk.scm:50
+msgid "Yes ["
+msgstr "Да, ["
+
+#: extensions/proud-of-freetalk.scm:50 extensions/proud-of-freetalk.scm:56
+msgid "] is using ["
+msgstr "] използва ["
+
+#: extensions/proud-of-freetalk.scm:56
+msgid "No, but ["
+msgstr "Не, но ["
+
+#: extensions/proud-of-freetalk.scm:69
+msgid "proud-of-freetalk.scm: wrong number of arguments to /freetalk\n"
+msgstr "proud-of-freetalk.scm: грешен брой аргументи на /freetalk\n"
+
+#: extensions/roster.scm:21 extensions/roster.scm:30 extensions/roster.scm:79
+#: extensions/roster.scm:86 extensions/roster.scm:92
+msgid "Incomplete syntax"
+msgstr "Непълен синтаксис"
+
+#: extensions/roster.scm:70
+msgid "Jabber ID: "
+msgstr "Jabber ID: "
+
+#: extensions/roster.scm:71
+msgid "Jabber Server: "
+msgstr "Сървър на Jabber: "
+
+#: extensions/roster.scm:72
+msgid "Status: "
+msgstr "Състояние: "
+
+#: extensions/roster.scm:113
+msgid " is now"
+msgstr " сега е"
+
+#: extensions/roster.scm:115
+msgid " Online"
+msgstr " На линия"
+
+#: extensions/roster.scm:116
+msgid " Offline"
+msgstr " Изключен"
+
+#: extensions/roster.scm:126
+msgid "[Buddy request recieved from "
+msgstr "[Получено запитване от "
+
+#: extensions/roster.scm:126
+msgid " use /allow or /deny]"
+msgstr " (използвайте /allow или /deny)]"
+
+#: extensions/roster.scm:127
+msgid "[Use /add "
+msgstr "[Използвайте /add "
+
+#: extensions/roster.scm:127
+msgid " to add him/her to your buddy list]"
+msgstr " , за да го добавите към списъка с контакти]"
+
+#: extensions/shell.scm:28
+msgid "Press \"C-d\" to get back to freetalk"
+msgstr "Въведете „C-d“, за да се върнете във freetalk"
+
+#: extensions/utils.scm:25
+msgid "freetalk (FreeTalk) "
+msgstr "freetalk (FreeTalk) "
+
+#: extensions/utils.scm:26
+msgid "Copyright (C) 2005, 2006 FreeTalk Core Team.\n"
+msgstr "Авторски права © 2005, 2006 Екип от разработчици на Freetalk.\n"
+
+#: extensions/utils.scm:27
+msgid ""
+"This is free software; see the source for copying conditions.  There is NO "
+"warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
+msgstr ""
+"Това е свободен софтуер — вижте изходния код за условията на разпространение.\n"
+"НЯМА никакви гаранции, дори и косвените за ПРОДАЖБА или СЪОТВЕТСТВИЕ С КАКВАТО\n"
+"И ДА Е УПОТРЕБА.\n"
+
+#: extensions/broadcast.scm:40
+msgid "usage: /broadcast [MESSAGE]"
+msgstr "употреба: /broadcast [СЪОБЩЕНИЕ]"
+
+#: extensions/pipe.scm:40
+msgid "usage: /pipe BUDDY COMMAND [OPTIONS]"
+msgstr "употреба: /pipe КОНТАКТ КОМАНДА [ОПЦИИ]"
+
+#: extensions/state.scm:76
+msgid "usage: /load [FILE]"
+msgstr "употреба: /load [ФАЙЛ]"
+
+#: extensions/hacker-romance.scm:45
+msgid "usage: /burst-of-romance BUDDY COUNT MESSAGE"
+msgstr "употреба: /burst-of-romance КОНТАКТ БРОЙ СЪОБЩЕНИЕ"
+
+#: extensions/hacker-romance.scm:76
+msgid "usage: /burst BUDDY MESSAGE"
+msgstr "употреба: /burst КОНТАКТ СЪОБЩЕНИЕ"
+
+#: extensions/hacker-romance.scm:88
+msgid "usage: /greet BUDDY"
+msgstr "употреба: /greet КОНТАКТ"

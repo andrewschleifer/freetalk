@@ -2,6 +2,22 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2009-02-21 12:24:27 GMT	Harshavardhana (y4m4) <harsha@gluster.com>	patch-29
+
+    Summary:
+      Bulgarian translation added
+    Revision:
+      freetalk--main--3.0--patch-29
+
+    * Added bulgarian translation. Thanks to Yavor Doganov <yavor@gnu.org>
+
+    new files:
+     po/.arch-ids/bg.po.id po/bg.po
+
+    modified files:
+     ChangeLog po/LINGUAS
+
+
 2009-02-21 09:44:31 GMT	Anand Babu <ab@zresearch.com>	patch-28
 
     Summary:
