@@ -2,6 +2,40 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2009-02-25 20:14:40 GMT	Harshavardhana (y4m4) <harsha@gluster.com>	patch-30
+
+    Summary:
+      Updated Copyright headers and patch from Debarshi Ray
+    Revision:
+      freetalk--main--3.0--patch-30
+
+    * Build problems seen over glibc2.10 fedora - Thanks to Debarshi
+      Ray for sending the patch. 
+    * Updated copyright, added two thanks new entries in AUTHORS list.
+    * Updated TODO list 
+
+    modified files:
+     AUTHORS ChangeLog INSTALL TODO doc/freetalk.texi
+     extensions/beep.scm extensions/broadcast.scm
+     extensions/color.scm extensions/connection.scm
+     extensions/dict-buddy.scm extensions/dyn-commands.scm
+     extensions/file-transfer.scm extensions/first-time-run.sh.in
+     extensions/hacker-romance.scm extensions/history.scm
+     extensions/init.scm.in extensions/login.scm
+     extensions/loudscream.scm extensions/mr-oxford.scm
+     extensions/pipe.scm extensions/proud-of-freetalk.scm
+     extensions/roster.scm extensions/shell.scm
+     extensions/state.scm extensions/url.scm extensions/utils.scm
+     src/callbacks.cc src/callbacks.h src/commands.cc
+     src/commands.h src/compat.cc src/compat.h src/extensions.cc
+     src/extensions.h src/file_transfer.cc src/file_transfer.h
+     src/freetalk.cc src/freetalk.h src/interpreter.cc
+     src/interpreter.h src/loudscream.cc src/loudscream.h
+     src/presence.cc src/presence.h src/primitives.cc
+     src/primitives.h src/register.cc src/register.h src/roster.cc
+     src/roster.h src/util.cc src/util.h
+
+
 2009-02-21 12:24:27 GMT	Harshavardhana (y4m4) <harsha@gluster.com>	patch-29
 
     Summary:

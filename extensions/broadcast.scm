@@ -1,5 +1,5 @@
 ;;; broadcast.scm: broadcast messages to all the roster.
-;;; Copyright (c) 2005, 2006, 2007 Freetalk Core Team 
+;;; Copyright (c) 2005, 2006, 2007, 2008, 2009 Freetalk Core Team 
 ;;; This file is part of GNU Freetalk.
 ;;; 
 ;;; Freetalk is free software; you can redistribute it and/or modify it
