@@ -705,7 +705,7 @@ int ft_set_allow_file(int cookie_id, char *file_name)
   child_node = lm_message_node_add_child (child_node, "value", "http://jabber.org/protocol/ibb");
 
   /* upon delivery of this message we'll get a 'set' message to open an
-   * IBB, which will be handled asyncronously */
+   * IBB, which will be handled asynchronously */
   ret = lm_connection_send (state.conn, send_msg, NULL);
     
   return ret;

@@ -208,8 +208,8 @@ inner_main (void *closure, int argc, char **argv)
   //loudscream_init ();
   
   if (!state.script) {
-    load_default_config (); /* ~/.freetalk/freetalk.scm */
     args_init ();
+    load_default_config (); /* ~/.freetalk/freetalk.scm */
     ft_load ("init.scm");
     ft_load ("login.scm");
 

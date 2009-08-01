@@ -146,6 +146,6 @@ sync_printf (const char *fmt, va_list ap)
 void
 check_first_run (void)
 {
-  if( system ("sh " DATADIR "/" PACKAGE_NAME "/extensions/first-time-run.sh") >> 8 )
+  if (system ("sh " DATADIR "/" PACKAGE_NAME "/extensions/first-time-run.sh") >> 8 )
     exit (1);
 }

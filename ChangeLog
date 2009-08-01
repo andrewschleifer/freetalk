@@ -2,6 +2,19 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2009-08-01 06:06:50 GMT	Anand Babu <ab@zresearch.com>	patch-31
+
+    Summary:
+      parse arguments before startup script init
+    Revision:
+      freetalk--main--3.0--patch-31
+
+
+    modified files:
+     ChangeLog po/bg.po src/file_transfer.cc src/freetalk.cc
+     src/util.cc
+
+
 2009-02-25 20:14:40 GMT	Harshavardhana (y4m4) <harsha@gluster.com>	patch-30
 
     Summary:

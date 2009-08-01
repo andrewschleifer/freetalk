@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freetalk 3.2\n"
 "Report-Msgid-Bugs-To: freetalk-dev@gnu.org\n"
-"POT-Creation-Date: 2008-11-15 02:44-0800\n"
+"POT-Creation-Date: 2009-07-31 14:06-0700\n"
 "PO-Revision-Date: 2009-01-13 01:01+0200\n"
 "Last-Translator: Yavor Doganov <yavor@gnu.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -18,29 +18,29 @@ msgstr ""
 msgid "No such command or buddy. See /help"
 msgstr "Няма такава команда или контакт. Вижте /help."
 
-#: src/callbacks.cc:73 src/commands.cc:159
+#: src/callbacks.cc:74 src/commands.cc:159
 msgid "Connected."
 msgstr "Свързан."
 
-#: src/callbacks.cc:78 src/commands.cc:155
+#: src/callbacks.cc:79 src/commands.cc:155
 msgid "Could not connect."
 msgstr "Неуспех при свързването."
 
-#: src/callbacks.cc:82 src/commands.cc:163
+#: src/callbacks.cc:83 src/commands.cc:163
 msgid "Authenticating ..."
 msgstr "Удостоверяване…"
 
-#: src/callbacks.cc:135
+#: src/callbacks.cc:137
 #, c-format
 msgid "[message of type '%s']"
 msgstr "[съобщение от вид „%s“]"
 
-#: src/callbacks.cc:235
+#: src/callbacks.cc:238
 #, c-format
 msgid "[iq received: %s (unhandled yet)]"
 msgstr "[получено iq: %s (все още не се обработва)]"
 
-#: src/callbacks.cc:241
+#: src/callbacks.cc:244
 msgid "[iq received: (unhandled yet)]"
 msgstr "[получено iq: (все още не се обработва)]"
 
@@ -285,8 +285,10 @@ msgid ""
 "This is free software; see the source for copying conditions.  There is NO "
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
 msgstr ""
-"Това е свободен софтуер — вижте изходния код за условията на разпространение.\n"
-"НЯМА никакви гаранции, дори и косвените за ПРОДАЖБА или СЪОТВЕТСТВИЕ С КАКВАТО\n"
+"Това е свободен софтуер — вижте изходния код за условията на "
+"разпространение.\n"
+"НЯМА никакви гаранции, дори и косвените за ПРОДАЖБА или СЪОТВЕТСТВИЕ С "
+"КАКВАТО\n"
 "И ДА Е УПОТРЕБА.\n"
 
 #: extensions/broadcast.scm:40
