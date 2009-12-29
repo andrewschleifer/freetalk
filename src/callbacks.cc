@@ -118,13 +118,13 @@ ft_msg_msg_handler (LmMessageHandler *handler, LmConnection *conn,
 {
   LmMessageNode *root, *body, *x;
   const char *msg_str, *type;
-  char *ts = NULL;
+  char *from, *ts = NULL;
   std::string from;
 
   root = lm_message_get_node (msg);
   body = lm_message_node_get_child (root, "body");
 
-  from = lm_message_node_get_attribute (msg->node, "from");
+  from = (char *) lm_message_node_get_attribute (msg->node, "from");
 
   /* since the file-transfer happens in-band with messages, we can no longer
    * ignore messages with no 'body' */

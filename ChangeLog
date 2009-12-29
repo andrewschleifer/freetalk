@@ -2,6 +2,19 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2009-12-29 21:23:25 GMT	Anand Babu <ab@zresearch.com>	patch-32
+
+    Summary:
+      Fix FTBFS due to a modified const in src/callbacks.cc
+    Revision:
+      freetalk--main--3.0--patch-32
+
+    Thanks to Jon Bernard <bernardj@gmail.com> and Kartik Mistry <kartik@debian.org>
+
+    modified files:
+     ChangeLog configure.ac src/callbacks.cc
+
+
 2009-08-01 06:06:50 GMT	Anand Babu <ab@zresearch.com>	patch-31
 
     Summary:
