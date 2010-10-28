@@ -8,6 +8,12 @@
 ;      (ft-set-prompt! "freetalk: ")
 ;      (ft-set-server! "talk.google.com"))
 
+;; Auto reconnect 
+; (add-hook! ft-disconnected-hook
+; 	   (lambda (reason)
+; 	     (display "\nReconnecting ...\n")
+; 	     (connect-handle (ft-connect))))
+
 ;; Example proxy configuration
 ; (and (string=? (ft-get-jid) "")
 ;      (ft-set-jid! "anand.avati@gmail.com")

@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--freetalk@sv.gnu.org/freetalk--main--3.0
 #
 
+2010-10-28 02:45:36 GMT	Anand Babu Periasamy <ab@gluster.com>	patch-33
+
+    Summary:
+      Justin Forest's patch for auto-reconnect functionality
+    Revision:
+      freetalk--main--3.0--patch-33
+
+    Thanks to Justin Forest <justin.forest@gmail.com>
+
+    modified files:
+     ChangeLog examples/freetalk.scm po/bg.po src/callbacks.cc
+     src/extensions.cc src/extensions.h
+
+
 2009-12-29 21:23:25 GMT	Anand Babu <ab@zresearch.com>	patch-32
 
     Summary:

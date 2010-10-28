@@ -27,6 +27,7 @@ extern SCM ex_message_send_hook;
 extern SCM ex_presence_receive_hook;
 extern SCM ex_subscribe_receive_hook;
 extern SCM ex_disconnect_hook;
+extern SCM ex_disconnected_hook;
 extern SCM ex_command_hook;
 extern SCM ex_login_hook;
 extern SCM ex_quit_hook;

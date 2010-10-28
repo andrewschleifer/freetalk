@@ -33,6 +33,7 @@ SCM ex_message_send_hook;
 SCM ex_presence_receive_hook;
 SCM ex_subscribe_receive_hook;
 SCM ex_disconnect_hook;
+SCM ex_disconnected_hook;
 SCM ex_command_hook;
 SCM ex_login_hook;
 SCM ex_quit_hook;
@@ -104,6 +105,9 @@ register_hooks ()
 
   ex_disconnect_hook = scm_make_hook (scm_from_int (1));
   scm_c_define ("ft-disconnect-hook", ex_disconnect_hook);
+
+  ex_disconnected_hook = scm_make_hook (scm_from_int (1));
+  scm_c_define ("ft-disconnected-hook", ex_disconnected_hook);
 
   ex_command_hook = scm_make_hook (scm_from_int (2));
   scm_c_define ("ft-command-hook", ex_command_hook);

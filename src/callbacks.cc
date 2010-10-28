@@ -118,7 +118,7 @@ ft_msg_msg_handler (LmMessageHandler *handler, LmConnection *conn,
 {
   LmMessageNode *root, *body, *x;
   const char *msg_str, *type;
-  char *from, *ts = NULL;
+  char *ts = NULL;
   std::string from;
 
   root = lm_message_get_node (msg);
@@ -268,6 +268,10 @@ ft_disconnect_function (LmConnection *conn,
      state was not FT_AUTH, etc)
   */
   do_set_conn_status (FT_DEAD);
+
+  /* run another hook which actually lets scripts reconnect
+  */
+  scm_run_hook (ex_disconnected_hook, scm_list_n (scm_from_int (reason), SCM_UNDEFINED));
   return;
 }
 
